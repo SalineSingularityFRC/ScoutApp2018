@@ -7,8 +7,8 @@
     tools:context="com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp.MatchData$PlaceholderFragment">
 
     <ScrollView
-        android:layout_width="365dp"
-        android:layout_height="495dp"
+        android:layout_width="574dp"
+        android:layout_height="865dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -35,10 +35,10 @@
                 android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.764"
+                app:layout_constraintHorizontal_bias="0.751"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/view"
-                app:layout_constraintVertical_bias="0.951" />
+                app:layout_constraintVertical_bias="0.731" />
 
             <Button
                 android:id="@+id/autonScaleAddButton"
@@ -51,10 +51,10 @@
                 android:text="+"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.912"
+                app:layout_constraintHorizontal_bias="0.876"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/view"
-                app:layout_constraintVertical_bias="0.949" />
+                app:layout_constraintVertical_bias="0.739" />
 
             <Button
                 android:id="@+id/autonScaleMinusButton"
@@ -67,13 +67,14 @@
                 android:text="-"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.668"
+                app:layout_constraintHorizontal_bias="0.667"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view2" />
+                app:layout_constraintTop_toBottomOf="@+id/view2"
+                app:layout_constraintVertical_bias="0.228" />
 
             <View
                 android:id="@+id/view2"
-                android:layout_width="400dp"
+                android:layout_width="550dp"
                 android:layout_height="5dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="8dp"
@@ -82,10 +83,9 @@
                 android:background="#000000"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.509"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/drovePastHalfwaySwitch"
-                app:layout_constraintVertical_bias="0.736" />
+                app:layout_constraintVertical_bias="0.542" />
 
             <Button
                 android:id="@+id/autonAllianceSwitchAddButton"
@@ -98,14 +98,14 @@
                 android:text="+"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.912"
+                app:layout_constraintHorizontal_bias="0.893"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/view"
-                app:layout_constraintVertical_bias="0.155" />
+                app:layout_constraintVertical_bias="0.069" />
 
             <View
                 android:id="@+id/view"
-                android:layout_width="400dp"
+                android:layout_width="550dp"
                 android:layout_height="5dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="8dp"
@@ -114,14 +114,13 @@
                 android:background="#000000"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.509"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/drovePastHalfwaySwitch"
-                app:layout_constraintVertical_bias="0.149" />
+                app:layout_constraintVertical_bias="0.065" />
 
             <Switch
                 android:id="@+id/drovePastHalfwaySwitch"
-                android:layout_width="332dp"
+                android:layout_width="533dp"
                 android:layout_height="33dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
@@ -130,7 +129,7 @@
                 android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.47"
+                app:layout_constraintHorizontal_bias="0.52"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/autoRunSwitch"
                 app:layout_constraintVertical_bias="0.0" />
@@ -148,10 +147,10 @@
                 android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.048"
+                app:layout_constraintHorizontal_bias="0.021"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.024" />
 
             <Spinner
                 android:id="@+id/startingPositionSpinner"
@@ -170,7 +169,7 @@
 
             <Switch
                 android:id="@+id/autoRunSwitch"
-                android:layout_width="332dp"
+                android:layout_width="533dp"
                 android:layout_height="33dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
@@ -179,7 +178,7 @@
                 android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.47"
+                app:layout_constraintHorizontal_bias="0.52"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/startingPositionTextView"
                 app:layout_constraintVertical_bias="0.0" />
@@ -196,10 +195,10 @@
                 android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.044"
+                app:layout_constraintHorizontal_bias="0.033"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/view"
-                app:layout_constraintVertical_bias="0.173" />
+                app:layout_constraintVertical_bias="0.094" />
 
             <Button
                 android:id="@+id/autonAllianceSwitchMinusButton"
@@ -212,10 +211,10 @@
                 android:text="-"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.668"
+                app:layout_constraintHorizontal_bias="0.667"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/view"
-                app:layout_constraintVertical_bias="0.155" />
+                app:layout_constraintVertical_bias="0.069" />
 
             <TextView
                 android:id="@+id/autonAllianceSwitchCounterTextView"
@@ -232,12 +231,12 @@
                 app:layout_constraintHorizontal_bias="0.764"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/view"
-                app:layout_constraintVertical_bias="0.209" />
+                app:layout_constraintVertical_bias="0.094" />
 
             <CheckBox
                 android:id="@+id/allianceSwitchWrongSideCheckBox"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
+                android:layout_width="480dp"
+                android:layout_height="30dp"
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
@@ -247,10 +246,10 @@
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.49"
+                app:layout_constraintHorizontal_bias="0.727"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/autonAllianceSwitchTextView"
-                app:layout_constraintVertical_bias="0.050000012" />
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/autonScaleTextView"
@@ -265,24 +264,27 @@
                 android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.027"
+                app:layout_constraintHorizontal_bias="0.016"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view2" />
+                app:layout_constraintTop_toBottomOf="@+id/view2"
+                app:layout_constraintVertical_bias="0.216" />
 
             <CheckBox
-                android:id="@+id/checkBox3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/scaleWrongSideCheckBox"
+                android:layout_width="480dp"
+                android:layout_height="30dp"
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
-                android:text="CheckBox"
+                android:layoutDirection="rtl"
+                android:text="Wrong Side"
+                android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintHorizontal_bias="0.73"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/view2"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintVertical_bias="0.89" />
 
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
