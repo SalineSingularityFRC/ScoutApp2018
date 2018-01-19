@@ -4,7 +4,7 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.salinerobotics.salinesingularityscoutingapp.MatchData$PlaceholderFragment">
+    tools:context="com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp.MatchData$PlaceholderFragment">
 
     <ScrollView
         android:layout_width="365dp"
@@ -15,10 +15,9 @@
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.086">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
@@ -155,7 +154,7 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <Spinner
-                android:id="@+id/spinner2"
+                android:id="@+id/startingPositionSpinner"
                 android:layout_width="124dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"

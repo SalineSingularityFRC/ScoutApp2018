@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.salinerobotics.salinesingularityscoutingapp">
+    package="com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp">
 
     <application
         android:allowBackup="true"
@@ -9,18 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BeginningScreen" >
+        <activity android:name="com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp.BeginningScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MatchInformation" />
+        <activity android:name="com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp.MatchInformation" />
         <activity
-            android:name=".MatchData"
+            android:name="com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp.MatchData"
             android:label="@string/title_activity_match_data"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
+
 
 </manifest>

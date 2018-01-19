@@ -4,6 +4,6 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.salinerobotics.salinesingularityscoutingapp.MatchData$PlaceholderFragment">
+    tools:context="com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp.MatchData$PlaceholderFragment">
 
 </android.support.constraint.ConstraintLayout>
