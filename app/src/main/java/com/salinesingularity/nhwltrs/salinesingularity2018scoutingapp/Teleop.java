@@ -13,6 +13,7 @@ import org.w3c.dom.Text;
 public class Teleop extends Fragment {
     private static final String TAG = "Teleop";
     int allianceSwitchCounterLevel = 0;
+    int scaleCounterLevel = 0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -21,6 +22,9 @@ public class Teleop extends Fragment {
         Button allianceSwitchMinus = (Button) view.findViewById(R.id.teleopAllianceSwitchMinusButton);
         Button allianceSwitchAdd = (Button) view.findViewById(R.id.teleopAllianceSwitchAddButton);
         final TextView allianceSwitchCounter = (TextView) view.findViewById(R.id.teleopAllianceSwitchCounterTextView);
+        Button scaleMinus = (Button) view.findViewById(R.id.teleopScaleMinusButton);
+        Button scaleAdd = (Button) view.findViewById(R.id.teleopScaleAddButton);
+        final TextView scaleCounter = (TextView) view.findViewById(R.id.teleopScaleCounterTextView);
 
         allianceSwitchMinus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +43,25 @@ public class Teleop extends Fragment {
                 allianceSwitchCounter.setText(allianceSwitchCounterLevel + "");
             }
         });
+
+        scaleAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                scaleCounterLevel++;
+                scaleCounter.setText(scaleCounterLevel + "");
+            }
+        });
+
+        scaleMinus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (scaleCounterLevel> 0) {
+                    scaleCounterLevel--;
+                    scaleCounter.setText(scaleCounterLevel + "");
+                }
+            }
+        });
+
         return view;
     }
 }
