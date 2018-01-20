@@ -18,8 +18,8 @@ public class BeginningScreen extends AppCompatActivity {
         newMatch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent matchInformation = new Intent(getApplicationContext(), MatchInformation.class);
-                startActivity(matchInformation);
+                Intent newTeam = new Intent(getApplicationContext(), NewTeam.class);
+                startActivity(newTeam);
             }
         });
     }
