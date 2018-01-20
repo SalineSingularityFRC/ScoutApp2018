@@ -1,7 +1,9 @@
 package com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +33,7 @@ public class Auton extends Fragment {
         Button autonScaleMinusButton = (Button) view.findViewById(R.id.autonScaleMinusButton);
         final TextView allianceSwitchCounterTextView = (TextView) view.findViewById(R.id.autonAllianceSwitchCounterTextView);
         final TextView scaleCounterTextView = (TextView) view.findViewById(R.id.autonScaleCounerTextView);
-        Spinner startingPosition = (Spinner) view.findViewById(R.id.startingPositionSpinner);
+        final Spinner startingPosition = (Spinner) view.findViewById(R.id.startingPositionSpinner);
 
         List<String> list = new ArrayList<String>();
         list.add("Left");
