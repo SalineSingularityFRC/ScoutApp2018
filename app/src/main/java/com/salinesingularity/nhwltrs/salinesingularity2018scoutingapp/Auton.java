@@ -5,9 +5,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Auton extends Fragment {
     private static final String TAG = "Auton";
@@ -27,7 +31,25 @@ public class Auton extends Fragment {
         Button autonScaleMinusButton = (Button) view.findViewById(R.id.autonScaleMinusButton);
         final TextView allianceSwitchCounterTextView = (TextView) view.findViewById(R.id.autonAllianceSwitchCounterTextView);
         final TextView scaleCounterTextView = (TextView) view.findViewById(R.id.autonScaleCounerTextView);
-        final Spinner startingPositionSpinner = (Spinner) view.findViewById(R.id.startingPositionSpinner);
+        Spinner startingPosition = (Spinner) view.findViewById(R.id.startingPositionSpinner);
+
+        List<String> list = new ArrayList<String>();
+        list.add("Left");
+        list.add("Middle");
+        list.add("Right");
+        list.add("");
+        final int listsize = list.size() - 1;
+
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, list) {
+            @Override
+            public int getCount() {
+                return (listsize);
+            }
+        };
+
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        startingPosition.setAdapter(dataAdapter);
+        startingPosition.setSelection(listsize);
 
         autonAllianceSwitchMinusButton.setOnClickListener(new View.OnClickListener() {
             @Override
