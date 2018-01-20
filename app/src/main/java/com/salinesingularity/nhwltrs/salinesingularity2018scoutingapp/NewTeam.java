@@ -61,8 +61,10 @@ public class NewTeam extends AppCompatActivity {
                     return;
                 }
 
-                Intent matchInformation = new Intent(getApplicationContext(), MatchInformation.class);
-                startActivity(matchInformation);
+                //Intent teams = new Intent(getApplicationContext(), Teams.class);
+                //teams.putExtra("Team Name", checkTeamName);
+                //teams.putExtra("Team Number", checkTeamNumber);
+                //startActivity(teams);
             }
         });
     }
