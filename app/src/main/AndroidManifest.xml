@@ -22,7 +22,8 @@
             android:label="@string/title_activity_match_data"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="com.salinesingularity.nhwltrs.test.NewTeam" />
-        <activity android:name=".NewTeam"></activity>
+        <activity android:name=".NewTeam" />
+        <activity android:name=".Teams"></activity>
     </application>
 
 </manifest>
