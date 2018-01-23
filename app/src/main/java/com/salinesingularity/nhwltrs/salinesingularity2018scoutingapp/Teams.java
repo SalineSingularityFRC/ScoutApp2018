@@ -27,6 +27,7 @@ public class Teams extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teams);
 
+        super.onResume();
         Button newTeam = (Button)findViewById(R.id.newTeamsButton);
         ListView list = (ListView) findViewById(R.id.teamsListView);
 

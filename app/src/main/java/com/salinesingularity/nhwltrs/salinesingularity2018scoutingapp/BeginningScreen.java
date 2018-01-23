@@ -14,12 +14,21 @@ public class BeginningScreen extends AppCompatActivity {
         setContentView(R.layout.activity_beginning_screen);
 
         Button newMatch = (Button)findViewById(R.id.inputDataButton);
+        Button analyzeData = (Button)findViewById(R.id.analyzeDataButton);
 
         newMatch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent teams = new Intent(getApplicationContext(), Teams.class);
                 startActivity(teams);
+            }
+        });
+
+        analyzeData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent analyzeTeams = new Intent(getApplicationContext(), AnalyzeTeams.class);
+                startActivity(analyzeTeams);
             }
         });
     }
