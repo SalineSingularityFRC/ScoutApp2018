@@ -3,12 +3,16 @@ package com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp.MatchInformation;
 import com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp.NewTeam;
@@ -28,8 +32,9 @@ public class Teams extends AppCompatActivity {
         setContentView(R.layout.activity_teams);
 
         super.onResume();
-        Button newTeam = (Button)findViewById(R.id.newTeamsButton);
+        Button newTeam = (Button) findViewById(R.id.newTeamsButton);
         ListView list = (ListView) findViewById(R.id.teamsListView);
+        EditText search = (EditText) findViewById(R.id.searchTeams);
 
         List<HashMap<String, String>> listItems = new ArrayList<>();
         SimpleAdapter adapter = new SimpleAdapter(this, listItems, R.layout.list_item, new String[]{"First Line", "Second Line"}, new int[]{R.id.teamNameTextView, R.id.teamNumberTextView});
@@ -45,7 +50,7 @@ public class Teams extends AppCompatActivity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent matchInformation = new Intent (getApplicationContext(), MatchInformation.class);
+                Intent matchInformation = new Intent(getApplicationContext(), MatchInformation.class);
                 startActivity(matchInformation);
             }
         });
