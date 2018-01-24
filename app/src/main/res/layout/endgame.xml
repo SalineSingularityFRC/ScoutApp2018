@@ -8,14 +8,17 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:minHeight="900dp">
 
             <CheckBox
-                android:id="@+id/vaultBoostCheckBox"
+                android:id="@+id/endgameVaultBoostCheckBox"
                 android:layout_width="524dp"
                 android:layout_height="37dp"
                 android:layout_marginBottom="8dp"
@@ -27,14 +30,14 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/teleopScaleTextView"
+                app:layout_constraintStart_toStartOf="@+id/endgameVaultTextView"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.599" />
+                app:layout_constraintVertical_bias="0.46" />
 
             <CheckBox
-                android:id="@+id/vaultForceCheckBox2"
+                android:id="@+id/endgameVaultForceCheckBox"
                 android:layout_width="524dp"
-                android:layout_height="37dp"
+                android:layout_height="35dp"
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="8dp"
@@ -44,16 +47,16 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/teleopScaleTextView"
+                app:layout_constraintStart_toStartOf="@+id/endgameVaultTextView"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.547" />
+                app:layout_constraintVertical_bias="0.42" />
 
             <View
                 android:id="@+id/view6"
                 android:layout_width="550dp"
                 android:layout_height="5dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="480dp"
+                android:layout_marginBottom="812dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:background="#000000"
@@ -68,7 +71,7 @@
                 android:layout_width="550dp"
                 android:layout_height="5dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="544dp"
+                android:layout_marginBottom="724dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:background="#000000"
@@ -76,12 +79,12 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/drovePastHalfwaySwitch"
-                app:layout_constraintVertical_bias="0.065" />
+                app:layout_constraintVertical_bias="1.0" />
 
             <CheckBox
-                android:id="@+id/teleopOpponentSwitchCompetitiveCheckBox"
+                android:id="@+id/endgameOpponentSwitchCompetitiveCheckBox"
                 android:layout_width="524dp"
-                android:layout_height="37dp"
+                android:layout_height="36dp"
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="8dp"
@@ -90,46 +93,39 @@
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.117"
-                app:layout_constraintStart_toStartOf="@+id/teleopScaleTextView"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/endgameOpponentSwitchTextView"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.333" />
+                app:layout_constraintVertical_bias="0.24" />
 
             <View
                 android:id="@+id/view8"
                 android:layout_width="550dp"
                 android:layout_height="5dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="664dp"
+                android:layout_marginBottom="644dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:background="#000000"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.55"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/drovePastHalfwaySwitch"
                 app:layout_constraintVertical_bias="0.065" />
 
             <Button
-                android:id="@+id/teleopScaleAddButton2"
+                android:id="@+id/endgameScaleAddButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginStart="512dp"
                 android:text="+"
                 android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/teleopAllianceSwitchAddButton"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/teleopAllianceSwitchAddButton"
-                app:layout_constraintTop_toBottomOf="@+id/teleopAllianceSwitchAddButton"
-                app:layout_constraintVertical_bias="0.074" />
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="88dp" />
 
             <TextView
-                android:id="@+id/teleopScaleCounterTextView2"
-                android:layout_width="wrap_content"
+                android:id="@+id/endgameScaleCounterTextView2"
+                android:layout_width="15dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
@@ -138,32 +134,33 @@
                 android:textAlignment="center"
                 android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/teleopAllianceSwitchCounterTextView"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/teleopAllianceSwitchCounterTextView"
-                app:layout_constraintTop_toBottomOf="@+id/teleopAllianceSwitchCounterTextView"
-                app:layout_constraintVertical_bias="0.077" />
+                app:layout_constraintEnd_toStartOf="@+id/endgameScaleAddButton"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/endgameScaleMinusButton"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.097" />
 
             <Button
-                android:id="@+id/teleopScaleMinusButton2"
+                android:id="@+id/endgameScaleMinusButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
                 android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="-"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/teleopAllianceSwitchMinusButton"
-                app:layout_constraintHorizontal_bias="0.737"
-                app:layout_constraintStart_toStartOf="@+id/teleopAllianceSwitchMinusButton"
-                app:layout_constraintTop_toBottomOf="@+id/teleopAllianceSwitchMinusButton"
-                app:layout_constraintVertical_bias="0.074" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.797"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.094" />
 
             <TextView
-                android:id="@+id/teleopScaleTextView2"
+                android:id="@+id/endgameScaleTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="764dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
@@ -172,17 +169,32 @@
                 android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.05"
+                app:layout_constraintHorizontal_bias="0.043"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.9" />
 
             <CheckBox
-                android:id="@+id/teleopAllianceSwitchCompetitiveCheckBox2"
+                android:id="@+id/endgameAllianceSwitchCompetitiveCheckBox"
                 android:layout_width="524dp"
                 android:layout_height="33dp"
                 android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:layoutDirection="rtl"
+                android:text="Competitive"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/endgameAllianceSwitchAddButton"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/teleopAllianceSwitchTextView"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.04" />
+
+            <CheckBox
+                android:id="@+id/endgameScaleCompetitiveCheckBox"
+                android:layout_width="524dp"
+                android:layout_height="37dp"
+                android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp"
                 android:layoutDirection="rtl"
                 android:text="Competitive"
@@ -192,27 +204,10 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/teleopAllianceSwitchTextView"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.057" />
-
-            <CheckBox
-                android:id="@+id/teleopScaleCompetitiveCheckBox2"
-                android:layout_width="524dp"
-                android:layout_height="37dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="8dp"
-                android:layoutDirection="rtl"
-                android:text="Competitive"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/teleopScaleTextView"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.186" />
+                app:layout_constraintVertical_bias="0.137" />
 
             <Button
-                android:id="@+id/teleopAllianceSwitchAddButton2"
+                android:id="@+id/endgameAllianceSwitchAddButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
                 android:layout_marginBottom="132dp"
@@ -229,7 +224,7 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <Button
-                android:id="@+id/teleopAllianceSwitchMinusButton2"
+                android:id="@+id/endgameAllianceSwitchMinusButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
                 android:layout_marginBottom="132dp"
@@ -245,21 +240,25 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
-                android:id="@+id/teleopAllianceSwitchCounterTextView2"
+                android:id="@+id/endgameAllianceSwitchCounterTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="0"
                 android:textAlignment="center"
                 android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/endgameAllianceSwitchAddButton"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/endgameAllianceSwitchMinusButton"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.01"
-                tools:layout_editor_absoluteX="372dp" />
+                app:layout_constraintVertical_bias="0.004" />
 
             <TextView
-                android:id="@+id/teleopAllianceSwitchTextView2"
+                android:id="@+id/teleopAllianceSwitchTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -281,19 +280,18 @@
                 android:layout_width="550dp"
                 android:layout_height="5dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="776dp"
+                android:layout_marginBottom="580dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:background="#000000"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.558"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/drovePastHalfwaySwitch"
-                app:layout_constraintVertical_bias="0.065" />
+                app:layout_constraintVertical_bias="0.32999998" />
 
             <TextView
-                android:id="@+id/opponentsSwitchTextView2"
+                android:id="@+id/endgameOpponentSwitchTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -305,13 +303,13 @@
                 android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.068"
+                app:layout_constraintHorizontal_bias="0.06"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.268" />
+                app:layout_constraintVertical_bias="0.2" />
 
             <Button
-                android:id="@+id/teleopOpponentsSwitchMinusButton2"
+                android:id="@+id/endgameOpponentsSwitchMinusButton2"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
                 android:layout_marginBottom="8dp"
@@ -321,13 +319,13 @@
                 android:text="-"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.8"
+                app:layout_constraintHorizontal_bias="0.797"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.268" />
+                app:layout_constraintVertical_bias="0.2" />
 
             <TextView
-                android:id="@+id/teleopOpponentsSwitchCounterTextView2"
+                android:id="@+id/endgameOpponentsSwitchCounterTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -338,14 +336,14 @@
                 android:textAlignment="center"
                 android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.845"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/endgameOpponentsSwitchAddButton"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/endgameOpponentsSwitchMinusButton2"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.26999998" />
+                app:layout_constraintVertical_bias="0.204" />
 
             <Button
-                android:id="@+id/teleopOpponentsSwitchAddButton2"
+                android:id="@+id/endgameOpponentsSwitchAddButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
                 android:layout_marginBottom="8dp"
@@ -358,10 +356,10 @@
                 app:layout_constraintHorizontal_bias="0.928"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.268" />
+                app:layout_constraintVertical_bias="0.2" />
 
             <TextView
-                android:id="@+id/teleopPortalTextView2"
+                android:id="@+id/endgamePortalTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -373,13 +371,13 @@
                 android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.05"
+                app:layout_constraintHorizontal_bias="0.044"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.411" />
+                app:layout_constraintVertical_bias="0.303" />
 
             <Button
-                android:id="@+id/teleopPortalMinusButton2"
+                android:id="@+id/endgamePortalMinusButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
                 android:layout_marginBottom="8dp"
@@ -389,13 +387,13 @@
                 android:text="-"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.8"
+                app:layout_constraintHorizontal_bias="0.797"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.412" />
+                app:layout_constraintVertical_bias="0.303" />
 
             <TextView
-                android:id="@+id/teleopPortalCounterTextView2"
+                android:id="@+id/endgamePortalCounterTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -406,14 +404,13 @@
                 android:textAlignment="center"
                 android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.845"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/endgamePortalAddButton"
+                app:layout_constraintStart_toEndOf="@+id/endgamePortalMinusButton"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.411" />
+                app:layout_constraintVertical_bias="0.305" />
 
             <Button
-                android:id="@+id/teleopPortalAddButton2"
+                android:id="@+id/endgamePortalAddButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
                 android:layout_marginBottom="8dp"
@@ -423,13 +420,13 @@
                 android:text="+"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.93"
+                app:layout_constraintHorizontal_bias="0.931"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.412" />
+                app:layout_constraintVertical_bias="0.303" />
 
             <TextView
-                android:id="@+id/teleopVaultTextView2"
+                android:id="@+id/endgameVaultTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -441,13 +438,13 @@
                 android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.042"
+                app:layout_constraintHorizontal_bias="0.028"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.49" />
+                app:layout_constraintVertical_bias="0.378" />
 
             <Button
-                android:id="@+id/teleopVaultMinusButton2"
+                android:id="@+id/endgameVaultMinusButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
                 android:layout_marginBottom="8dp"
@@ -457,13 +454,13 @@
                 android:text="-"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.8"
+                app:layout_constraintHorizontal_bias="0.797"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.49" />
+                app:layout_constraintVertical_bias="0.376" />
 
             <TextView
-                android:id="@+id/teleopVaultCounterTextView2"
+                android:id="@+id/endgameVaultCounterTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -474,14 +471,13 @@
                 android:textAlignment="center"
                 android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.845"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/endgameVaultAddButton"
+                app:layout_constraintStart_toEndOf="@+id/endgameVaultMinusButton"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.489" />
+                app:layout_constraintVertical_bias="0.378" />
 
             <Button
-                android:id="@+id/teleopVaultAddButton2"
+                android:id="@+id/endgameVaultAddButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
                 android:layout_marginBottom="8dp"
@@ -494,7 +490,7 @@
                 app:layout_constraintHorizontal_bias="0.928"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.491" />
+                app:layout_constraintVertical_bias="0.376" />
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
 
