@@ -27,7 +27,7 @@
             android:minWidth="600dp">
 
             <CheckBox
-                android:id="@+id/vaultBoostCheckBox2"
+                android:id="@+id/teleopVaultBoostCheckBox2"
                 android:layout_width="524dp"
                 android:layout_height="37dp"
                 android:layout_marginBottom="8dp"
@@ -44,7 +44,7 @@
                 app:layout_constraintVertical_bias="0.599" />
 
             <CheckBox
-                android:id="@+id/vaultForceCheckBox"
+                android:id="@+id/teleopVaultForceCheckBox"
                 android:layout_width="524dp"
                 android:layout_height="37dp"
                 android:layout_marginBottom="8dp"
@@ -308,7 +308,7 @@
                 app:layout_constraintVertical_bias="0.065" />
 
             <TextView
-                android:id="@+id/opponentsSwitchTextView"
+                android:id="@+id/teleopOpponentsSwitchTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
