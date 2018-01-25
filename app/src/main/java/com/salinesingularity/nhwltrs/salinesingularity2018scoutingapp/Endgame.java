@@ -1,12 +1,18 @@
 package com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Endgame extends Fragment {
     private static final String TAG = "Endgame";
@@ -36,6 +42,25 @@ public class Endgame extends Fragment {
         Button vaultAdd = (Button) view.findViewById(R.id.endgameVaultAddButton);
         Button vaultMinus = (Button) view.findViewById(R.id.endgameVaultMinusButton);
         final TextView vaultCounter = (TextView) view.findViewById(R.id.endgameVaultCounterTextView);
+        //final Spinner numberofBots = (Spinner) view.findViewById(R.id.spinner);
+        Button endMatch = (Button) view.findViewById(R.id.endMatchButton);
+
+        /*List<String> list = new ArrayList<String>();
+        list.add("0");
+        list.add("1");
+        list.add("2");
+        final int listsize = list.size();*/
+
+        /*ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, list) {
+            @Override
+            public int getCount() {
+                return (listsize);
+            }
+        };*/
+
+        /*dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        numberofBots.setAdapter(dataAdapter);
+        numberofBots.setSelection(listsize);*/
 
         allianceSwitchAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,6 +152,14 @@ public class Endgame extends Fragment {
             }
         });
 
+        //Need onclick listener for starting intent that takes you back to the beginning screen
+        endMatch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent startScreen = new Intent(view.getContext(), BeginningScreen.class);
+                startActivity(startScreen);
+            }
+        });
         return view;
     }
 }
