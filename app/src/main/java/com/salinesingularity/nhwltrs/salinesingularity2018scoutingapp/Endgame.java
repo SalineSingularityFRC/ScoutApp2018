@@ -45,6 +45,7 @@ public class Endgame extends Fragment {
         //final Spinner numberofBots = (Spinner) view.findViewById(R.id.spinner);
         Button endMatch = (Button) view.findViewById(R.id.endMatchButton);
 
+        //just a little random comment :)
         /*List<String> list = new ArrayList<String>();
         list.add("0");
         list.add("1");
