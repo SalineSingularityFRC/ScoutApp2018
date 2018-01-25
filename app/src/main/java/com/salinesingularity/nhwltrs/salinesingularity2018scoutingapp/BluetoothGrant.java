@@ -66,6 +66,15 @@ public class BluetoothGrant {
         macAddress = android.provider.Settings.Secure.getString(activity.getContentResolver(), "bluetooth_address");
         Log.i(tag,"My MAC address is: "+macAddress);
 
+        bluetooth.onStart();
+        if (!bluetooth.isEnabled())
+            bluetooth.enable();
+    }
+    public static void search(){
 
+        bluetooth.connectToAddress(match);
+    }
+    public static void end(){
+        bluetooth.onStop();
     }
 }
