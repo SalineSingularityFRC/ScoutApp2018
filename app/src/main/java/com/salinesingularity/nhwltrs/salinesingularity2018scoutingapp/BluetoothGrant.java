@@ -63,13 +63,13 @@ public class BluetoothGrant {
 
     public BluetoothGrant(AppCompatActivity a){
         activity=a;
-        bluetooth = new Bluetooth(activity);
         bluetooth.setCommunicationCallback(CCB);
         macAddress = android.provider.Settings.Secure.getString(activity.getContentResolver(), "bluetooth_address");
         Log.i(tag,"My MAC address is: "+macAddress);
     }
 
     public void setup(){
+        bluetooth = new Bluetooth(activity);
         bluetooth.onStart();
         if (!bluetooth.isEnabled())
             bluetooth.enable();

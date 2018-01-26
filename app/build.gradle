@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.salinesingularity.nhwltrs.test"
+        applicationId "com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp"
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 1
