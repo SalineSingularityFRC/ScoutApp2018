@@ -2,12 +2,15 @@ package com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.SystemClock;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -21,6 +24,11 @@ public class Endgame extends Fragment {
     int opponentsSwitchLevel = 0;
     int portalLevel = 0;
     int vaultLevel = 0;
+    long MillisecondTime, StartTime, TimeBuff, UpdateTime = 0L ;
+    Handler handler;
+    int Seconds, Minutes, MilliSeconds ;
+    TextView climbTimer;
+    boolean started = false;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,26 +50,45 @@ public class Endgame extends Fragment {
         Button vaultAdd = (Button) view.findViewById(R.id.endgameVaultAddButton);
         Button vaultMinus = (Button) view.findViewById(R.id.endgameVaultMinusButton);
         final TextView vaultCounter = (TextView) view.findViewById(R.id.endgameVaultCounterTextView);
-        //final Spinner numberofBots = (Spinner) view.findViewById(R.id.spinner);
+        final Spinner numberofBots = (Spinner) view.findViewById(R.id.spinner);
         Button endMatch = (Button) view.findViewById(R.id.endMatchButton);
+        climbTimer = (TextView) view.findViewById(R.id.climbTimerTextView);
+        Button startStopButton = (Button) view.findViewById(R.id.climbStartStopButton);
 
-        //just a little random comment :)
-        /*List<String> list = new ArrayList<String>();
-        list.add("0");
-        list.add("1");
-        list.add("2");
-        final int listsize = list.size();*/
+        handler = new Handler();
 
-        /*ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, list) {
+        startStopButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (started) {
+                    TimeBuff += MillisecondTime;
+                    handler.removeCallbacks(runnable);
+                    started = false;
+                }
+                else {
+                    StartTime = SystemClock.uptimeMillis();
+                    handler.postDelayed(runnable, 0);
+                    started = true;
+                }
+
+            }
+        });
+
+        List<String> liftBots = new ArrayList<String>();
+        liftBots.add("0");
+        liftBots.add("1");
+        liftBots.add("2");
+        final int listsize = liftBots.size();
+
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, liftBots) {
             @Override
             public int getCount() {
                 return (listsize);
             }
-        };*/
+        };
 
-        /*dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         numberofBots.setAdapter(dataAdapter);
-        numberofBots.setSelection(listsize);*/
 
         allianceSwitchAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -161,6 +188,32 @@ public class Endgame extends Fragment {
                 startActivity(startScreen);
             }
         });
+
         return view;
     }
+
+    public Runnable runnable = new Runnable() {
+
+        public void run() {
+
+            MillisecondTime = SystemClock.uptimeMillis() - StartTime;
+
+            UpdateTime = TimeBuff + MillisecondTime;
+
+            Seconds = (int) (UpdateTime / 1000);
+
+            Minutes = Seconds / 60;
+
+            Seconds = Seconds % 60;
+
+            MilliSeconds = (int) (UpdateTime % 1000);
+
+            climbTimer.setText("" + Minutes + ":"
+                    + String.format("%02d", Seconds) + ":"
+                    + String.format("%03d", MilliSeconds));
+
+            handler.postDelayed(this, 0);
+        }
+
+    };
 }
