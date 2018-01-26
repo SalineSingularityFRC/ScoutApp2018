@@ -22,8 +22,7 @@
             android:name=".MatchData"
             android:label="@string/title_activity_match_data"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.salinesingularity.nhwltrs.test.NewTeam" />
-        <activity android:name=".NewTeam" />
+        <activity android:name="com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp.NewTeam" />
         <activity android:name=".Teams" />
         <activity android:name=".AnalyzeTeams" />
         <activity android:name=".PreviousMatches"></activity>

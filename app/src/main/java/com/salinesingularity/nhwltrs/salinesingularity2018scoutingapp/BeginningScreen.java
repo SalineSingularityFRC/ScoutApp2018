@@ -8,6 +8,8 @@ import android.widget.Button;
 
 public class BeginningScreen extends AppCompatActivity {
 
+    public BluetoothGrant bluetooth=new BluetoothGrant(this);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,5 +33,19 @@ public class BeginningScreen extends AppCompatActivity {
                 startActivity(analyzeTeams);
             }
         });
+    }
+
+    protected void onStart() {
+        super.onStart();
+
+        bluetooth.setup();
+        bluetooth.send("Hello world!");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        bluetooth.end();
     }
 }

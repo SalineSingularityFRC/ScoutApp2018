@@ -13,30 +13,40 @@ import me.aflak.bluetooth.CommunicationCallback;
  */
 
 public class BluetoothGrant {
-    private static Bluetooth bluetooth;
-    private static AppCompatActivity activity;
-    public static Handler handler=new Handler();
-    public static String tag="7G7 Bluetooth Test";
-    public static String macAddress;
-    public static String match="B8:27:EB:E8:64:53";
+    private Bluetooth bluetooth;
+    private AppCompatActivity activity;
+    private static Handler handler = new Handler();
+    private static String tag = "7G7 Bluetooth Test";
+    private static String macAddress;
+    private static String match = "B8:27:EB:E8:64:53";
+    private static String pendingData;
     //public String match1="F0:27:2D:13:41:6C";
     //public String match2="74:75:48:53:5D:FB";
-    private static CommunicationCallback CCB= new CommunicationCallback() {
+    private CommunicationCallback CCB= new CommunicationCallback() {
         @Override
         public void onConnect(BluetoothDevice device) {
             Log.i(tag,"Connected to device "+device.getName()+" at "+device.getAddress()+"!");
-            bluetooth.send("\"5066\":\"Singularity\"\n");
+            bluetooth.send(pendingData);
         }
 
         @Override
         public void onDisconnect(BluetoothDevice device, String message) {
             Log.i(tag,"Disconnected from device "+device.getName()+" at "+device.getAddress()+"!");
-            //bluetooth.connectToAddress(match);
+            if(pendingData.length()!=0){
+                reconnect();
+            }
         }
 
         @Override
         public void onMessage(String message) {
-            Log.i("7G7 Message",message);
+            //Log.i("7G7 Message",message);
+            if(message=="done"){
+                pendingData="";
+                Log.i(tag,"Data sent successfully!");
+            }else{
+                Log.i(tag,"Unusual responce: "+message);
+            }
+
         }
 
         @Override
@@ -47,34 +57,40 @@ public class BluetoothGrant {
         @Override
         public void onConnectError(BluetoothDevice device, String message) {
             Log.e(tag,"Failed to connect: "+message);
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    Log.i(tag,"Attempting to connect to "+match+"...");
-                    bluetooth.connectToAddress(match);
-                }
-            },3000);
+            reconnect();
         }
     };
 
-    public static void setup(AppCompatActivity a){
+    public BluetoothGrant(AppCompatActivity a){
         activity=a;
         bluetooth = new Bluetooth(activity);
-
         bluetooth.setCommunicationCallback(CCB);
-
         macAddress = android.provider.Settings.Secure.getString(activity.getContentResolver(), "bluetooth_address");
         Log.i(tag,"My MAC address is: "+macAddress);
+    }
 
+    public void setup(){
         bluetooth.onStart();
         if (!bluetooth.isEnabled())
             bluetooth.enable();
     }
-    public static void search(){
 
-        bluetooth.connectToAddress(match);
+    private void reconnect(){
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                bluetooth.connectToAddress(match);
+            }
+        },3000);
     }
-    public static void end(){
+
+    public void send(String data){
+        if(pendingData.length()==0)
+            bluetooth.connectToAddress(match);
+        pendingData+=data;
+
+    }
+    public void end(){
         bluetooth.onStop();
     }
 }
