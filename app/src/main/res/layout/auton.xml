@@ -4,7 +4,7 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp.MatchData$PlaceholderFragment">
+    tools:context="com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp.MatchData">
 
     <Spinner
         android:id="@+id/startingPositionSpinner"
@@ -64,7 +64,7 @@
         android:layout_marginEnd="16dp"
         android:text="+"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="200dp" />
+        app:layout_constraintTop_toTopOf="@+id/autonAllianceSwitchTextView" />
 
     <Switch
         android:id="@+id/autoRunSwitch"
@@ -82,7 +82,7 @@
     <View
         android:id="@+id/view2"
         android:layout_width="0dp"
-        android:layout_height="5"
+        android:layout_height="5dp"
         android:layout_gravity="center"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
