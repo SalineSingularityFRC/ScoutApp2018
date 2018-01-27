@@ -9,10 +9,9 @@
     <Spinner
         android:id="@+id/startingPositionSpinner"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
         android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/startingPositionTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/startingPositionTextView"
         app:layout_constraintTop_toTopOf="@+id/startingPositionTextView" />
@@ -46,8 +45,8 @@
     <Switch
         android:id="@+id/drovePastHalfwaySwitch"
         android:layout_width="0dp"
-        android:layout_height="33dp"
-        android:layout_marginEnd="8dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:text="Drove Past Halfway"
@@ -69,8 +68,8 @@
     <Switch
         android:id="@+id/autoRunSwitch"
         android:layout_width="0dp"
-        android:layout_height="33dp"
-        android:layout_marginEnd="8dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:text="Auto-Run"
@@ -187,7 +186,7 @@
         android:id="@+id/autonScaleAddButton"
         android:layout_width="41dp"
         android:layout_height="38dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="16dp"
         android:text="+"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/autonScaleTextView" />

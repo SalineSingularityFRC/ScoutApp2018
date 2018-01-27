@@ -4,13 +4,13 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp.MatchData$PlaceholderFragment">
+    tools:context="com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp.MatchData">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
@@ -19,581 +19,376 @@
 
             <CheckBox
                 android:id="@+id/endgameVaultBoostCheckBox"
-                android:layout_width="524dp"
+                android:layout_width="0dp"
                 android:layout_height="37dp"
-                android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:text="Boost"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/endgameVaultTextView"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.46" />
-
-            <CheckBox
-                android:id="@+id/climbFailedClimbCheckBox"
-                android:layout_width="524dp"
-                android:layout_height="37dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="8dp"
-                android:text="Boost"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/endgameVaultTextView"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.577" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/endgameVaultForceCheckBox" />
 
             <CheckBox
                 android:id="@+id/endgameVaultForceCheckBox"
-                android:layout_width="524dp"
-                android:layout_height="35dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:text="Force"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/endgameVaultTextView"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.42" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/endgameVaultTextView" />
 
             <View
                 android:id="@+id/view6"
-                android:layout_width="550dp"
+                android:layout_width="0dp"
                 android:layout_height="5dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="812dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
                 android:background="#000000"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/drovePastHalfwaySwitch"
-                app:layout_constraintVertical_bias="0.065" />
+                app:layout_constraintTop_toBottomOf="@+id/endgameAllianceSwitchCompetitiveCheckBox" />
 
             <View
                 android:id="@+id/view7"
-                android:layout_width="550dp"
+                android:layout_width="0dp"
                 android:layout_height="5dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="724dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
                 android:background="#000000"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/drovePastHalfwaySwitch"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintTop_toBottomOf="@+id/endgameScaleCompetitiveCheckBox" />
 
             <CheckBox
                 android:id="@+id/endgameOpponentSwitchCompetitiveCheckBox"
-                android:layout_width="524dp"
-                android:layout_height="36dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:text="Competitive"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/endgameOpponentSwitchTextView"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.24" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/endgameOpponentSwitchTextView" />
 
             <View
                 android:id="@+id/view8"
-                android:layout_width="550dp"
+                android:layout_width="0dp"
                 android:layout_height="5dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="644dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
                 android:background="#000000"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/drovePastHalfwaySwitch"
-                app:layout_constraintVertical_bias="0.065" />
+                app:layout_constraintTop_toBottomOf="@+id/endgameOpponentSwitchCompetitiveCheckBox" />
 
             <Button
                 android:id="@+id/endgameScaleAddButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="+"
                 android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.931"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.094" />
+                app:layout_constraintTop_toTopOf="@+id/endgameScaleCounterTextView2" />
 
             <TextView
                 android:id="@+id/endgameScaleCounterTextView2"
                 android:layout_width="15dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="0"
                 android:textAlignment="center"
                 android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/endgameScaleAddButton"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/endgameScaleMinusButton"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.097" />
+                app:layout_constraintTop_toTopOf="@+id/endgameScaleMinusButton" />
 
             <Button
                 android:id="@+id/endgameScaleMinusButton"
-                android:layout_width="41dp"
+                android:layout_width="44dp"
                 android:layout_height="38dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="-"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.797"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.094" />
+                app:layout_constraintEnd_toStartOf="@+id/endgameScaleCounterTextView2"
+                app:layout_constraintTop_toTopOf="@+id/endgameScaleTextView" />
 
             <TextView
                 android:id="@+id/endgameScaleTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="764dp"
-                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="Scale"
                 android:textColor="#000000"
                 android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.043"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.9" />
+                app:layout_constraintTop_toBottomOf="@+id/view6" />
 
             <CheckBox
                 android:id="@+id/endgameAllianceSwitchCompetitiveCheckBox"
-                android:layout_width="524dp"
-                android:layout_height="33dp"
-                android:layout_marginBottom="8dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:text="Competitive"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/endgameAllianceSwitchAddButton"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/teleopAllianceSwitchTextView"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.04" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/teleopAllianceSwitchTextView" />
 
             <View
                 android:id="@+id/view10"
-                android:layout_width="550dp"
+                android:layout_width="0dp"
                 android:layout_height="5dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="444dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
                 android:background="#000000"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/drovePastHalfwaySwitch"
-                app:layout_constraintVertical_bias="0.32999998" />
+                app:layout_constraintTop_toBottomOf="@+id/endgameVaultBoostCheckBox" />
 
             <CheckBox
                 android:id="@+id/endgameScaleCompetitiveCheckBox"
-                android:layout_width="524dp"
-                android:layout_height="37dp"
-                android:layout_marginBottom="8dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:text="Competitive"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/teleopAllianceSwitchTextView"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.137" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/endgameScaleTextView" />
 
             <Button
                 android:id="@+id/endgameAllianceSwitchAddButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
-                android:layout_marginBottom="132dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="+"
                 android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.928"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toTopOf="@+id/endgameAllianceSwitchCounterTextView" />
 
             <Button
                 android:id="@+id/endgameAllianceSwitchMinusButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
-                android:layout_marginBottom="132dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="-"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.797"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintEnd_toStartOf="@+id/endgameAllianceSwitchCounterTextView"
+                app:layout_constraintTop_toTopOf="@+id/teleopAllianceSwitchTextView" />
 
             <TextView
                 android:id="@+id/endgameAllianceSwitchCounterTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="0"
                 android:textAlignment="center"
                 android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/endgameAllianceSwitchAddButton"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/endgameAllianceSwitchMinusButton"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.004" />
+                app:layout_constraintTop_toTopOf="@+id/endgameAllianceSwitchMinusButton" />
 
             <TextView
                 android:id="@+id/teleopAllianceSwitchTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="Alliance Switch"
                 android:textColor="#000000"
                 android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.06"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <View
                 android:id="@+id/view9"
-                android:layout_width="550dp"
+                android:layout_width="0dp"
                 android:layout_height="5dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="580dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
                 android:background="#000000"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/drovePastHalfwaySwitch"
-                app:layout_constraintVertical_bias="0.32999998" />
+                app:layout_constraintTop_toBottomOf="@+id/endgamePortalTextView" />
+
+            <View
+                android:id="@+id/view11"
+                android:layout_width="0dp"
+                android:layout_height="5dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:background="#000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/parkSwitch" />
 
             <TextView
                 android:id="@+id/endgameOpponentSwitchTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="Opponents Switch"
                 android:textColor="#000000"
                 android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.06"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.2" />
+                app:layout_constraintTop_toBottomOf="@+id/view7" />
 
             <Button
                 android:id="@+id/endgameOpponentsSwitchMinusButton2"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="-"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.797"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.2" />
+                app:layout_constraintEnd_toStartOf="@+id/endgameOpponentsSwitchCounterTextView"
+                app:layout_constraintTop_toTopOf="@+id/endgameOpponentSwitchTextView" />
 
             <TextView
                 android:id="@+id/endgameOpponentsSwitchCounterTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="0"
                 android:textAlignment="center"
                 android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/endgameOpponentsSwitchAddButton"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/endgameOpponentsSwitchMinusButton2"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.204" />
+                app:layout_constraintTop_toTopOf="@+id/endgameOpponentsSwitchMinusButton2" />
 
             <Button
                 android:id="@+id/endgameOpponentsSwitchAddButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="+"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.928"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.2" />
+                app:layout_constraintTop_toTopOf="@+id/endgameOpponentsSwitchCounterTextView" />
 
             <TextView
                 android:id="@+id/endgamePortalTextView"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_height="41dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="Portal"
                 android:textColor="#000000"
                 android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.044"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.303" />
+                app:layout_constraintTop_toBottomOf="@+id/view8" />
 
             <Button
                 android:id="@+id/endgamePortalMinusButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="-"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.797"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.303" />
+                app:layout_constraintEnd_toStartOf="@+id/endgamePortalCounterTextView"
+                app:layout_constraintTop_toTopOf="@+id/endgamePortalTextView" />
 
             <TextView
                 android:id="@+id/endgamePortalCounterTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="0"
                 android:textAlignment="center"
                 android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/endgamePortalAddButton"
-                app:layout_constraintStart_toEndOf="@+id/endgamePortalMinusButton"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.305" />
+                app:layout_constraintTop_toTopOf="@+id/endgamePortalMinusButton" />
 
             <Button
                 android:id="@+id/endgamePortalAddButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="+"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.931"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.303" />
+                app:layout_constraintTop_toTopOf="@+id/endgamePortalCounterTextView" />
 
             <TextView
                 android:id="@+id/endgameVaultTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="Vault"
                 android:textColor="#000000"
                 android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.028"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.378" />
+                app:layout_constraintTop_toBottomOf="@+id/view9" />
 
             <TextView
                 android:id="@+id/climbTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="Climb"
                 android:textColor="#000000"
                 android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.028"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.535" />
-
-            <TextView
-                android:id="@+id/parkTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:text="Park"
-                android:textColor="#000000"
-                android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0252"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.667" />
-
-            <TextView
-                android:id="@+id/helpClimbTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:text="Help Climb"
-                android:textColor="#000000"
-                android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.028"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.621" />
+                app:layout_constraintTop_toBottomOf="@+id/view10" />
 
             <Button
                 android:id="@+id/endgameVaultMinusButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="-"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.797"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.376" />
+                app:layout_constraintEnd_toStartOf="@+id/endgameVaultCounterTextView"
+                app:layout_constraintTop_toTopOf="@+id/endgameVaultTextView" />
 
             <TextView
                 android:id="@+id/endgameVaultCounterTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="0"
                 android:textAlignment="center"
                 android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/endgameVaultAddButton"
-                app:layout_constraintStart_toEndOf="@+id/endgameVaultMinusButton"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.378" />
+                app:layout_constraintTop_toTopOf="@+id/endgameVaultMinusButton" />
 
             <Button
                 android:id="@+id/endgameVaultAddButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="+"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.928"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.376" />
+                app:layout_constraintTop_toTopOf="@+id/endgameVaultCounterTextView" />
 
             <Button
                 android:id="@+id/climbStartStopButton"
                 android:layout_width="170dp"
                 android:layout_height="45dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="Start/Stop"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.618"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.533" />
+                app:layout_constraintTop_toTopOf="@+id/climbTextView" />
 
             <TextView
                 android:id="@+id/climbTimerTextView"
@@ -614,69 +409,64 @@
 
             <Switch
                 android:id="@+id/parkSwitch"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="Park"
+                android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.926"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.6665
-" />
+                app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
             <Spinner
                 android:id="@+id/spinner"
-                android:layout_width="105dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.922"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.624" />
+                app:layout_constraintEnd_toEndOf="@+id/climbStartStopButton"
+                app:layout_constraintStart_toStartOf="@+id/climbStartStopButton"
+                app:layout_constraintTop_toBottomOf="@+id/climbStartStopButton" />
 
             <CheckBox
                 android:id="@+id/sarcasticMessageCheckBox"
-                android:layout_width="450dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="I don't care enough about the success of this team to actually pay attention to the match."
                 android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.77"
+                app:layout_constraintTop_toBottomOf="@+id/view11"
                 tools:textAlignment="center" />
 
             <Button
                 android:id="@+id/endMatchButton"
                 android:layout_width="200dp"
                 android:layout_height="100dp"
-                android:textSize="25dp"
-                android:layout_marginBottom="32dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="32dp"
                 android:text="End Match"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:textSize="25dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.969" />
+                app:layout_constraintTop_toBottomOf="@+id/sarcasticMessageCheckBox" />
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </GridLayout>
 
     <TextView
         android:id="@+id/section_label"
