@@ -35,6 +35,7 @@ public class BeginningScreen extends AppCompatActivity {
         });
     }
 
+    @Override
     protected void onStart() {
         super.onStart();
 

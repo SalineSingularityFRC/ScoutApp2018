@@ -5,21 +5,24 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import java.util.Objects;
+
 import me.aflak.bluetooth.Bluetooth;
 import me.aflak.bluetooth.CommunicationCallback;
 
 /**
- * Created by frc5066 on 1/24/2018.
+ * Created by Grant D on 1/24/2018.
  */
 
 public class BluetoothGrant {
     private Bluetooth bluetooth;
     private AppCompatActivity activity;
-    private static Handler handler = new Handler();
+    private boolean setup = false;
+    private Handler handler = new Handler();
     private static String tag = "7G7 Bluetooth Test";
     private static String macAddress;
     private static String match = "B8:27:EB:E8:64:53";
-    private static String pendingData;
+    private String pendingData="";
     //public String match1="F0:27:2D:13:41:6C";
     //public String match2="74:75:48:53:5D:FB";
     private CommunicationCallback CCB= new CommunicationCallback() {
@@ -40,7 +43,7 @@ public class BluetoothGrant {
         @Override
         public void onMessage(String message) {
             //Log.i("7G7 Message",message);
-            if(message=="done"){
+            if(Objects.equals(message, "done")){
                 pendingData="";
                 Log.i(tag,"Data sent successfully!");
             }else{
@@ -63,16 +66,19 @@ public class BluetoothGrant {
 
     public BluetoothGrant(AppCompatActivity a){
         activity=a;
+        bluetooth = new Bluetooth(activity);
         bluetooth.setCommunicationCallback(CCB);
-        macAddress = android.provider.Settings.Secure.getString(activity.getContentResolver(), "bluetooth_address");
-        Log.i(tag,"My MAC address is: "+macAddress);
     }
 
     public void setup(){
-        bluetooth = new Bluetooth(activity);
-        bluetooth.onStart();
+        if(!setup) {
+            bluetooth.onStart();
+        }
         if (!bluetooth.isEnabled())
             bluetooth.enable();
+        setup=true;
+        //macAddress = android.provider.Settings.Secure.getString(activity.getContentResolver(), "bluetooth_address");
+        //Log.i(tag,"My MAC address is: "+macAddress);
     }
 
     private void reconnect(){
