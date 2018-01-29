@@ -53,7 +53,7 @@ public class Endgame extends Fragment {
         final Spinner numberofBots = (Spinner) view.findViewById(R.id.spinner);
         Button endMatch = (Button) view.findViewById(R.id.endMatchButton);
         climbTimer = (TextView) view.findViewById(R.id.climbTimerTextView);
-        Button startStopButton = (Button) view.findViewById(R.id.climbStartStopButton);
+        final Button startStopButton = (Button) view.findViewById(R.id.climbStartStopButton);
 
         handler = new Handler();
 
@@ -63,12 +63,14 @@ public class Endgame extends Fragment {
                 if (started) {
                     TimeBuff += MillisecondTime;
                     handler.removeCallbacks(runnable);
+                    startStopButton.setText("Start");
                     started = false;
                 }
                 else {
                     StartTime = SystemClock.uptimeMillis();
                     handler.postDelayed(runnable, 0);
                     started = true;
+                    startStopButton.setText("Stop");
                 }
 
             }
