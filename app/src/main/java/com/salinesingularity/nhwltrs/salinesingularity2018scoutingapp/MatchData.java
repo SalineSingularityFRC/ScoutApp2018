@@ -1,5 +1,9 @@
 package com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp;
 
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.support.design.widget.TabLayout;
@@ -22,6 +26,7 @@ public class MatchData extends AppCompatActivity {
     long MillisecondTime, StartTime, TimeBuff, UpdateTime = 0L ;
     Handler handler;
     int Seconds;
+    double MilliSeconds;
     TextView matchTimer;
 
     @Override
@@ -45,21 +50,20 @@ public class MatchData extends AppCompatActivity {
     }
 
     public Runnable runnable = new Runnable() {
-
-        public void run() {
-            MillisecondTime = SystemClock.uptimeMillis() - StartTime;
-            UpdateTime = TimeBuff + MillisecondTime;
-            Seconds = (int) (UpdateTime / 1000);
-            Seconds = 150 - Seconds;
-            if (Seconds < 0) {
-                matchTimer.setText("Match Over!");
+            public void run() {
+                MillisecondTime = SystemClock.uptimeMillis() - StartTime;
+                UpdateTime = TimeBuff + MillisecondTime;
+                Seconds = (int) (UpdateTime / 1000);
+                int timeLeft = 135 - Seconds;
+                MilliSeconds = (int) (UpdateTime % 1000);
+                MilliSeconds = MilliSeconds / 1000;
+                if (timeLeft < 0) {
+                    matchTimer.setText("Match Over!");
+                } else {
+                    matchTimer.setText(timeLeft + "");
+                }
+                handler.postDelayed(this, 0);
             }
-            else {
-                matchTimer.setText(String.format("%02d", Seconds));
-            }
-            handler.postDelayed(this, 0);
-        }
-
     };
 
     private void setUpViewPager(ViewPager viewPager) {
