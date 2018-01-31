@@ -33,6 +33,8 @@ public class BeginningScreen extends AppCompatActivity {
                 startActivity(analyzeTeams);
             }
         });
+
+        DatabaseGrant.setup(bluetooth);
     }
 
     @Override
