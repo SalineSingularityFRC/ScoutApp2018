@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -40,9 +41,9 @@ public class Auton extends Fragment {
         final Spinner startingPosition = (Spinner) view.findViewById(R.id.startingPositionSpinner);
 
         List<String> list = new ArrayList<String>();
-        list.add("Left");
+        list.add("Away");
         list.add("Middle");
-        list.add("Right");
+        list.add("Closest");
         list.add("");
         final int listsize = list.size() - 1;
 
@@ -80,6 +81,7 @@ public class Auton extends Fragment {
             public void onClick(View view) {
                 ScaleCounter++;
                 scaleCounterTextView.setText(ScaleCounter + "");
+
             }
         });
 
