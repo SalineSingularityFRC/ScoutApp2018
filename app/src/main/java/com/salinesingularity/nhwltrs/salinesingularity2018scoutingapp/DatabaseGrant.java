@@ -30,7 +30,7 @@ public class DatabaseGrant {
         }
         try {
             data = new JSONObject("{" +
-                    "\"type\":\"match\"," +
+                    "\"type\":\"robotMatch\"," +
                     "\"team\":" + teamNumber + "," +
                     "\"matchID\":\"" + match + "\"," +
                     "\"onBlue\":"+onBlue+"," +
@@ -55,15 +55,15 @@ public class DatabaseGrant {
         data.put("startingPos",pos);
     }
 
-    public static void setAutonSkill(int skill) throws JSONException { // 0-2 close-far
+    public static void setAutonSkill(int skill) throws JSONException { // 0 No auton, 1 Runs, 2 Passes Base line, 3 Switch, 4 Scale, 5 Robot eats power cube
         data.put("autonSkill",skill);
     }
 
-    public static void setClimbSkill(int skill) throws JSONException {
+    public static void setClimbSkill(int skill) throws JSONException { // 0 Not in contact with BASE, 1 In contact with BASE, 2 Completed CLIMB
         data.put("climbSkill",skill);
     }
 
-    public static void addScale(String type,int ms) throws JSONException {
+    public static void addScale(String type, int ms) throws JSONException {
         data.getJSONArray("scale").put(new JSONObject("{\"type\":\""+ type +"\",\"time\":"+ms+"}"));
     }
 }
