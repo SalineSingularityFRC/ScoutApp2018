@@ -455,14 +455,6 @@
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
 
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
-
-    </GridLayout>
-
     <TextView
         android:id="@+id/section_label"
         android:layout_width="wrap_content"

@@ -4,507 +4,349 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp.MatchData$PlaceholderFragment">
+    tools:context="com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp.MatchData"
+    tools:layout_editor_absoluteY="81dp">
 
     <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:fillViewport="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:minHeight="880dp"
-            android:minWidth="600dp">
+            android:layout_height="match_parent">
 
             <CheckBox
                 android:id="@+id/teleopVaultBoostCheckBox2"
-                android:layout_width="524dp"
-                android:layout_height="37dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:text="Boost"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/teleopScaleTextView"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.599" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/teleopVaultTextView" />
 
             <CheckBox
                 android:id="@+id/teleopVaultForceCheckBox"
-                android:layout_width="524dp"
-                android:layout_height="37dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:text="Force"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/teleopScaleTextView"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/teleopVaultBoostCheckBox2"
                 app:layout_constraintVertical_bias="0.547" />
 
             <View
                 android:id="@+id/view5"
-                android:layout_width="550dp"
+                android:layout_width="0dp"
                 android:layout_height="5dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="480dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
                 android:background="#000000"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/drovePastHalfwaySwitch"
-                app:layout_constraintVertical_bias="0.065" />
+                app:layout_constraintTop_toBottomOf="@+id/teleopPortalTextView" />
 
             <View
                 android:id="@+id/view4"
-                android:layout_width="550dp"
+                android:layout_width="0dp"
                 android:layout_height="5dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="544dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
                 android:background="#000000"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/drovePastHalfwaySwitch"
-                app:layout_constraintVertical_bias="0.065" />
+                app:layout_constraintTop_toBottomOf="@+id/teleopOpponentSwitchCompetitiveCheckBox2" />
 
             <CheckBox
                 android:id="@+id/teleopOpponentSwitchCompetitiveCheckBox2"
-                android:layout_width="524dp"
-                android:layout_height="37dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:text="Competitive"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.117"
                 app:layout_constraintStart_toStartOf="@+id/teleopScaleTextView"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.333" />
+                app:layout_constraintTop_toBottomOf="@+id/teleopOpponentsSwitchTextView" />
 
             <View
                 android:id="@+id/view3"
-                android:layout_width="550dp"
+                android:layout_width="0dp"
                 android:layout_height="5dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="664dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
                 android:background="#000000"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.55"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/drovePastHalfwaySwitch"
-                app:layout_constraintVertical_bias="0.065" />
+                app:layout_constraintTop_toBottomOf="@+id/teleopScaleCompetitiveCheckBox" />
 
             <Button
                 android:id="@+id/teleopScaleAddButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="+"
                 android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/teleopAllianceSwitchAddButton"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/teleopAllianceSwitchAddButton"
-                app:layout_constraintTop_toBottomOf="@+id/teleopAllianceSwitchAddButton"
-                app:layout_constraintVertical_bias="0.074" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/teleopScaleMinusButton" />
 
             <TextView
                 android:id="@+id/teleopScaleCounterTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="0"
                 android:textAlignment="center"
                 android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/teleopAllianceSwitchCounterTextView"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/teleopAllianceSwitchCounterTextView"
-                app:layout_constraintTop_toBottomOf="@+id/teleopAllianceSwitchCounterTextView"
+                app:layout_constraintBottom_toBottomOf="@+id/teleopScaleAddButton"
+                app:layout_constraintEnd_toStartOf="@+id/teleopScaleAddButton"
+                app:layout_constraintTop_toTopOf="@+id/teleopScaleAddButton"
                 app:layout_constraintVertical_bias="0.077" />
 
             <Button
                 android:id="@+id/teleopScaleMinusButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="-"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/teleopAllianceSwitchMinusButton"
-                app:layout_constraintHorizontal_bias="0.737"
-                app:layout_constraintStart_toStartOf="@+id/teleopAllianceSwitchMinusButton"
-                app:layout_constraintTop_toBottomOf="@+id/teleopAllianceSwitchMinusButton"
-                app:layout_constraintVertical_bias="0.074" />
+                app:layout_constraintEnd_toStartOf="@+id/teleopScaleCounterTextView"
+                app:layout_constraintTop_toTopOf="@+id/teleopScaleTextView" />
 
             <TextView
                 android:id="@+id/teleopScaleTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="Scale"
                 android:textColor="#000000"
                 android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.05"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toBottomOf="@+id/view" />
 
             <CheckBox
                 android:id="@+id/teleopAllianceSwitchCompetitiveCheckBox"
-                android:layout_width="524dp"
-                android:layout_height="33dp"
-                android:layout_marginBottom="8dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="Competitive"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/teleopAllianceSwitchTextView"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.057" />
+                app:layout_constraintTop_toBottomOf="@+id/teleopAllianceSwitchTextView" />
 
             <CheckBox
                 android:id="@+id/teleopScaleCompetitiveCheckBox"
-                android:layout_width="524dp"
-                android:layout_height="37dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:text="Competitive"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/teleopScaleTextView"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.186" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/teleopScaleTextView" />
 
             <Button
                 android:id="@+id/teleopAllianceSwitchAddButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
-                android:layout_marginBottom="132dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="+"
                 android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.928"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toTopOf="@+id/teleopAllianceSwitchMinusButton" />
 
             <Button
                 android:id="@+id/teleopAllianceSwitchMinusButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
-                android:layout_marginBottom="132dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="-"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.797"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintEnd_toStartOf="@+id/teleopAllianceSwitchCounterTextView"
+                app:layout_constraintTop_toTopOf="@+id/teleopAllianceSwitchTextView" />
 
             <TextView
                 android:id="@+id/teleopAllianceSwitchCounterTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="0"
                 android:textAlignment="center"
                 android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/teleopAllianceSwitchMinusButton"
                 app:layout_constraintEnd_toStartOf="@+id/teleopAllianceSwitchAddButton"
-                app:layout_constraintStart_toEndOf="@+id/teleopAllianceSwitchMinusButton"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.004" />
+                app:layout_constraintTop_toTopOf="@+id/teleopAllianceSwitchMinusButton" />
 
             <TextView
                 android:id="@+id/teleopAllianceSwitchTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="Alliance Switch"
                 android:textColor="#000000"
                 android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.06"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <View
                 android:id="@+id/view"
-                android:layout_width="550dp"
+                android:layout_width="0dp"
                 android:layout_height="5dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="776dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
                 android:background="#000000"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.558"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/drovePastHalfwaySwitch"
-                app:layout_constraintVertical_bias="0.065" />
+                app:layout_constraintTop_toBottomOf="@+id/teleopAllianceSwitchCompetitiveCheckBox" />
 
             <TextView
                 android:id="@+id/teleopOpponentsSwitchTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="Opponents Switch"
                 android:textColor="#000000"
                 android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.068"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.268" />
+                app:layout_constraintTop_toBottomOf="@+id/view3" />
 
             <Button
                 android:id="@+id/teleopOpponentsSwitchMinusButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="-"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.8"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.268" />
+                app:layout_constraintEnd_toStartOf="@+id/teleopOpponentsSwitchCounterTextView"
+                app:layout_constraintTop_toTopOf="@+id/teleopOpponentsSwitchTextView" />
 
             <TextView
                 android:id="@+id/teleopOpponentsSwitchCounterTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="0"
                 android:textAlignment="center"
                 android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.845"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.26999998" />
+                app:layout_constraintBottom_toBottomOf="@+id/teleopOpponentsSwitchAddButton"
+                app:layout_constraintEnd_toStartOf="@+id/teleopOpponentsSwitchAddButton"
+                app:layout_constraintTop_toTopOf="@+id/teleopOpponentsSwitchAddButton" />
 
             <Button
                 android:id="@+id/teleopOpponentsSwitchAddButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="+"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.928"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.268" />
+                app:layout_constraintTop_toTopOf="@+id/teleopOpponentsSwitchMinusButton" />
 
             <TextView
                 android:id="@+id/teleopPortalTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="Portal"
                 android:textColor="#000000"
                 android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.05"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.411" />
+                app:layout_constraintTop_toBottomOf="@+id/view4" />
 
             <Button
                 android:id="@+id/teleopPortalMinusButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="-"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.8"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.412" />
+                app:layout_constraintEnd_toStartOf="@+id/teleopPortalCounterTextView"
+                app:layout_constraintTop_toTopOf="@+id/teleopPortalTextView" />
 
             <TextView
                 android:id="@+id/teleopPortalCounterTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="0"
                 android:textAlignment="center"
                 android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.845"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.412" />
+                app:layout_constraintBottom_toBottomOf="@+id/teleopPortalAddButton"
+                app:layout_constraintEnd_toStartOf="@+id/teleopPortalAddButton"
+                app:layout_constraintTop_toTopOf="@+id/teleopPortalAddButton" />
 
             <Button
                 android:id="@+id/teleopPortalAddButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="+"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.93"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.412" />
+                app:layout_constraintTop_toTopOf="@+id/teleopPortalMinusButton" />
 
             <TextView
                 android:id="@+id/teleopVaultTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="Vault"
                 android:textColor="#000000"
                 android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.042"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.49" />
+                app:layout_constraintTop_toBottomOf="@+id/view5" />
 
             <Button
                 android:id="@+id/teleopVaultMinusButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="-"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.8"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.49" />
+                app:layout_constraintEnd_toStartOf="@+id/teleopVaultCounterTextView"
+                app:layout_constraintTop_toTopOf="@+id/teleopVaultTextView" />
 
             <TextView
                 android:id="@+id/teleopVaultCounterTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="0"
                 android:textAlignment="center"
                 android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.845"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.492" />
+                app:layout_constraintBottom_toBottomOf="@+id/teleopVaultAddButton"
+                app:layout_constraintEnd_toStartOf="@+id/teleopVaultAddButton"
+                app:layout_constraintTop_toTopOf="@+id/teleopVaultAddButton" />
 
             <Button
                 android:id="@+id/teleopVaultAddButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:text="+"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.928"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.491" />
+                app:layout_constraintTop_toTopOf="@+id/teleopVaultMinusButton" />
 
         </android.support.constraint.ConstraintLayout>
 
