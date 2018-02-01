@@ -74,19 +74,19 @@ public class Auton extends Fragment {
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if (isChecked) {
                     autoRun = true;
-                    try {
+                    /*try {
                         DatabaseGrant.setAutonSkill(1);
                     } catch (JSONException e) {
                         e.printStackTrace();
-                    }
+                    }*/
                 }
                 else {
                     autoRun = false;
-                    try {
+                    /*try {
                         DatabaseGrant.setAutonSkill(0);
                     } catch (JSONException e) {
                         e.printStackTrace();
-                    }
+                    }*/
                 }
             }
         });
@@ -100,18 +100,18 @@ public class Auton extends Fragment {
                     if (AllianceSwitchCounter == 0) {
                         blockInSwitch = false;
                         if (autoRun) {
-                            try {
+                            /*try {
                                 DatabaseGrant.setAutonSkill(1);
                             } catch (JSONException e) {
                                 e.printStackTrace();
-                            }
+                            }*/
                         }
                         else {
-                            try {
+                            /*try {
                                 DatabaseGrant.setAutonSkill(0);
                             } catch (JSONException e) {
                                 e.printStackTrace();
-                            }
+                            }*/
                         }
                     }
                 }
@@ -124,11 +124,11 @@ public class Auton extends Fragment {
                 AllianceSwitchCounter++;
                 allianceSwitchCounterTextView.setText(AllianceSwitchCounter + "");
                 blockInSwitch = true;
-                try {
+                /*try {
                     DatabaseGrant.setAutonSkill(2);
                 } catch (JSONException e) {
                     e.printStackTrace();
-                }
+                }*/
             }
         });
 
@@ -136,33 +136,33 @@ public class Auton extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if (isChecked) {
-                    try {
+                    /*try {
                         DatabaseGrant.setAutonSkill(-2);
                     } catch (JSONException e) {
                         e.printStackTrace();
-                    }
+                    }*/
                 }
                 else {
                     if (AllianceSwitchCounter > 0) {
-                        try {
+                        /*try {
                             DatabaseGrant.setAutonSkill(2);
                         } catch (JSONException e) {
                             e.printStackTrace();
-                        }
+                        }*/
                     }
                     else if (autoRun) {
-                        try {
+                        /*try {
                             DatabaseGrant.setAutonSkill(1);
                         } catch (JSONException e) {
                             e.printStackTrace();
-                        }
+                        }*/
                     }
                     else {
-                        try {
+                        /*try {
                             DatabaseGrant.setAutonSkill(0);
                         } catch (JSONException e) {
                             e.printStackTrace();
-                        }
+                        }*/
                     }
                 }
             }
@@ -174,11 +174,11 @@ public class Auton extends Fragment {
                 ScaleCounter++;
                 scaleCounterTextView.setText(ScaleCounter + "");
                 blockInScale = true;
-                try {
+                /*try {
                     DatabaseGrant.setAutonSkill(3);
                 } catch (JSONException e) {
                     e.printStackTrace();
-                }
+                }*/
             }
         });
 
@@ -191,18 +191,18 @@ public class Auton extends Fragment {
                     if (ScaleCounter == 0) {
                         blockInScale = false;
                         if (autoRun) {
-                            try {
+                            /*try {
                                 DatabaseGrant.setAutonSkill(1);
                             } catch (JSONException e) {
                                 e.printStackTrace();
-                            }
+                            }*/
                         }
                         else {
-                            try {
+                            /*try {
                                 DatabaseGrant.setAutonSkill(0);
                             } catch (JSONException e) {
                                 e.printStackTrace();
-                            }
+                            }*/
                         }
                     }
                 }
@@ -213,43 +213,43 @@ public class Auton extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if (isChecked && ScaleCounter>0) {
-                    try {
+                    /*try {
                         DatabaseGrant.setAutonSkill(-3);
                     } catch (JSONException e) {
                         e.printStackTrace();
-                    }
+                    }*/
                 }
                 else {
                     if (ScaleCounter>0) {
-                        try {
+                        /*try {
                             DatabaseGrant.setAutonSkill(3);
                         } catch (JSONException e) {
                             e.printStackTrace();
-                        }
+                        }*/
                     }
                     else if (autoRun) {
-                        try {
+                        /*try {
                             DatabaseGrant.setAutonSkill(1);
                         } catch (JSONException e) {
                             e.printStackTrace();
-                        }
+                        }*/
                     }
                     else {
-                        try {
+                        /*try {
                             DatabaseGrant.setAutonSkill(0);
                         } catch (JSONException e) {
                             e.printStackTrace();
-                        }
+                        }*/
                     }
                 }
             }
         });
 
-        try {
+        /*try {
             DatabaseGrant.setAutonSkill(0);
         } catch (JSONException e) {
             e.printStackTrace();
-        }
+        }*/
         return view;
     }
 }

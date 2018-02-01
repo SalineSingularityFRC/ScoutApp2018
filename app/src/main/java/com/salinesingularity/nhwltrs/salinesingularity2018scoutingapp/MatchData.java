@@ -14,6 +14,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -42,11 +44,19 @@ public class MatchData extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
         matchTimer  = (TextView) findViewById(R.id.matchTimer);
+        final Button startMatch = (Button) findViewById(R.id.matchStartButton);
 
         handler = new Handler();
         StartTime = SystemClock.uptimeMillis();
-        handler.postDelayed(runnable, 0);
 
+        startMatch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startMatch.setVisibility(View.INVISIBLE);
+                StartTime = SystemClock.uptimeMillis();
+                handler.postDelayed(runnable, 0);
+            }
+        });
     }
 
     public Runnable runnable = new Runnable() {
