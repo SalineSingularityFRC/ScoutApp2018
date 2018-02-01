@@ -213,8 +213,7 @@ public class Endgame extends Fragment {
 
             MilliSeconds = (int) (UpdateTime % 1000);
 
-            climbTimer.setText("" + Minutes + ":"
-                    + String.format("%02d", Seconds) + ":"
+            climbTimer.setText(String.format("%02d", Seconds) + ":"
                     + String.format("%03d", MilliSeconds));
 
             handler.postDelayed(this, 0);
