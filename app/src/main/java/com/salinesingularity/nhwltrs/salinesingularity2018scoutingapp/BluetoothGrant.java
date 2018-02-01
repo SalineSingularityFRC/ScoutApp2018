@@ -16,7 +16,7 @@ import me.aflak.bluetooth.CommunicationCallback;
 
 public class BluetoothGrant {
     private Bluetooth bluetooth;
-    private AppCompatActivity activity;
+    public AppCompatActivity activity;
     private boolean setup = false;
     private Handler handler = new Handler();
     private static String tag = "7G7 Bluetooth Test";
@@ -45,6 +45,7 @@ public class BluetoothGrant {
             //Log.i("7G7 Message",message);
             if(Objects.equals(message, "done")){
                 pendingData="";
+                DatabaseGrant.dataSent();
                 Log.i(tag,"Data sent successfully!");
             }else{
                 Log.i(tag,"Unusual responce: "+message);
