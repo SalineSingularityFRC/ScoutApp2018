@@ -55,6 +55,7 @@ public class MatchData extends AppCompatActivity {
                 startMatch.setVisibility(View.INVISIBLE);
                 StartTime = SystemClock.uptimeMillis();
                 handler.postDelayed(runnable, 0);
+
             }
         });
     }

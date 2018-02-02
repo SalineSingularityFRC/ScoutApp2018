@@ -30,16 +30,14 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.086"
         app:layout_constraintStart_toEndOf="@+id/matchNumberTextView"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.018"
-        tools:text="Number"
-        android:layout_marginRight="128dp"
-        android:layout_marginLeft="8dp" />
+        tools:text="Number" />
 
     <TextView
         android:id="@+id/allianceColorTextView"
