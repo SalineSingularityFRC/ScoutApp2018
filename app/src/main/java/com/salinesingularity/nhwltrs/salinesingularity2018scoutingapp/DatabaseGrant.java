@@ -4,6 +4,7 @@ package com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp;
  * Created by frc5066 on 1/30/2018.
  */
 
+import android.content.Context;
 import android.util.Log;
 
 import org.json.*;
@@ -29,25 +30,17 @@ public class DatabaseGrant {
             fis.close();
         } catch (FileNotFoundException e) {
             try {
-                FileOutputStream fos = bluetooth.activity.openFileOutput("teamData", bluetooth.activity.MODE_PRIVATE);
+                FileOutputStream fos = bluetooth.activity.openFileOutput("teamData", Context.MODE_PRIVATE);
                 fos.write("".getBytes());
                 fos.close();
                 FileInputStream fis = bluetooth.activity.openFileInput("teamData");
                 teamData=new JSONArray(fis.read());
                 fis.close();
-            } catch (FileNotFoundException e1) {
-
-                e1.printStackTrace();
-            } catch (IOException e1) {
-
-                e1.printStackTrace();
-            } catch (JSONException e1) {
+            } catch (IOException | JSONException e1) {
                 e1.printStackTrace();
             }
 
-        } catch (JSONException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (JSONException | IOException e) {
             e.printStackTrace();
         }
     }
