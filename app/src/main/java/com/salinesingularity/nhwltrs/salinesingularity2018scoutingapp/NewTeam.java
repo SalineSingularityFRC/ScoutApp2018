@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import org.json.JSONException;
+
 public class NewTeam extends AppCompatActivity {
 
     @Override
@@ -62,6 +64,13 @@ public class NewTeam extends AppCompatActivity {
                 }
 
                 Intent teams = new Intent(getApplicationContext(), Teams.class);
+                int intTeamNumber = Integer.parseInt(checkTeamNumber);
+                try {
+                    DatabaseGrant.makeTeam(intTeamNumber, checkTeamName);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    finish();
+                }
                 teams.putExtra("Team Name",checkTeamName);
                 teams.putExtra("Team Number", checkTeamNumber);
                 startActivity(teams);
