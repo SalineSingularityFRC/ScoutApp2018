@@ -64,31 +64,31 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="235dp"
+        android:layout_height="wrap_content"
         tools:layout_editor_absoluteY="0dp">
 
         <TextView
             android:id="@+id/matchTimer"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="110dp"
+            android:layout_height="64dp"
             android:text="150"
-            android:textSize="100sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="50sp"
+            app:layout_constraintBottom_toBottomOf="@+id/matchStartButton"
+            app:layout_constraintEnd_toEndOf="@+id/matchStartButton"
+            app:layout_constraintStart_toStartOf="@+id/matchStartButton"
+            app:layout_constraintTop_toTopOf="@+id/matchStartButton" />
 
         <Button
             android:id="@+id/matchStartButton"
-            android:layout_width="167dp"
-            android:layout_height="126dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="110dp"
             android:text="START MATCH"
             android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
