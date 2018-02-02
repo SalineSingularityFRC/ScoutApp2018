@@ -24,11 +24,11 @@ public class MatchInformation extends AppCompatActivity {
         setContentView(R.layout.activity_match_information);
 
         Button startMatchButton = (Button)findViewById(R.id.startMatchButton);
-        final Switch redAllianceSwitch = (Switch)findViewById(R.id.redAllianceColorSwitch);
-        final Switch blueAllianceSwitch = (Switch)findViewById(R.id.blueAllianceColorSwitch);
+        //final Switch redAllianceSwitch = (Switch)findViewById(R.id.redAllianceColorSwitch);
+        //final Switch blueAllianceSwitch = (Switch)findViewById(R.id.blueAllianceColorSwitch);
         final EditText matchNumberEditText = (EditText)findViewById(R.id.matchNumberEditText);
 
-        redAllianceSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        /*redAllianceSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     blueAllianceSwitch.setEnabled(false);
@@ -50,7 +50,7 @@ public class MatchInformation extends AppCompatActivity {
                     blueTeam = false;
                 }
             }
-        });
+        });*/
         startMatchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
