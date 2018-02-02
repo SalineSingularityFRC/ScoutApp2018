@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Switch;
+import android.widget.Toast;
+
+import org.json.JSONException;
 
 public class MatchInformation extends AppCompatActivity {
 
@@ -84,8 +87,18 @@ public class MatchInformation extends AppCompatActivity {
                     builder.show();
                     return;
                 }
-                Intent matchData = new Intent(getApplicationContext(), MatchData.class);
-                startActivity(matchData);
+                if (getIntent().hasExtra("Team Number")) {
+                    String teamNumberString = getIntent().getExtras().toString();
+                    int teamNumber = Integer.parseInt(teamNumberString);
+                    try {
+                        DatabaseGrant.createRobotMatch(teamNumber,checkInput, blueTeam);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        finish();
+                    }
+                    Intent matchData = new Intent(getApplicationContext(), MatchData.class);
+                    startActivity(matchData);
+                }
             }
         });
     }

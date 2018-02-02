@@ -38,7 +38,7 @@ public class Teams extends AppCompatActivity {
 
         List<HashMap<String, String>> listItems = new ArrayList<>();
         SimpleAdapter adapter = new SimpleAdapter(this, listItems, R.layout.list_item, new String[]{"First Line", "Second Line"}, new int[]{R.id.teamNameTextView, R.id.teamNumberTextView});
-        HashMap<String, String> resultsMap = new HashMap<>();
+        final HashMap<String, String> resultsMap = new HashMap<>();
         list.setAdapter(adapter);
         if (getIntent().hasExtra("Team Name")) {
             resultsMap.put("First Line", getIntent().getExtras().getString("Team Name"));
@@ -50,7 +50,9 @@ public class Teams extends AppCompatActivity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String teamNumber = ((TextView) view.findViewById(R.id.teamNumberTextView)).getText().toString();
                 Intent matchInformation = new Intent(getApplicationContext(), MatchInformation.class);
+                matchInformation.putExtra("Team Number", teamNumber);
                 startActivity(matchInformation);
             }
         });
