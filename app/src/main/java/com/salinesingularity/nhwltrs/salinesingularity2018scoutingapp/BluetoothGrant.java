@@ -43,13 +43,9 @@ public class BluetoothGrant {
         @Override
         public void onMessage(String message) {
             //Log.i("7G7 Message",message);
-            if(Objects.equals(message, "done")){
-                pendingData="";
-                DatabaseGrant.dataSent();
-                Log.i(tag,"Data sent successfully!");
-            }else{
-                Log.i(tag,"Unusual responce: "+message);
-            }
+            pendingData="";
+            DatabaseGrant.dataSent(message);
+            Log.i(tag,"Data transfer complete!");
 
         }
 
@@ -94,7 +90,8 @@ public class BluetoothGrant {
     public void send(String data){
         if(pendingData.length()==0)
             bluetooth.connectToAddress(match);
-        pendingData+=data;
+        //pendingData+=data;
+        pendingData=data;
 
     }
     public void end(){

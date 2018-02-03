@@ -17,10 +17,10 @@ import java.io.IOException;
 public class DatabaseGrant {
 
     public static BluetoothGrant bluetooth;
-    public static boolean inSession = false;
-    private static JSONObject robotMatchData;
-    private static JSONObject tempTeamData;
-    private static JSONArray teamData;
+    private static JSONObject tempRobotMatchData;
+    public static JSONArray robotMatchData = new JSONArray();
+    private static JSONArray tempTeamData = new JSONArray();
+    private static JSONArray teamData = new JSONArray();
 
     public static void setup(BluetoothGrant bluetooth){
         DatabaseGrant.bluetooth=bluetooth;
@@ -46,52 +46,59 @@ public class DatabaseGrant {
     }
 
     public static void makeTeam(int teamNumber, String teamName) throws JSONException{
-        tempTeamData = new JSONObject("{"+
+        tempTeamData.put(new JSONObject("{"+
                 "\"type\":\"team\"," +
                 "\"team\":" + teamNumber + "," +
                 "\"name\":\"" + teamName + "\"" +
-        "}");
+        "}"));
+        send();
     }
 
     public static int getTeamNumber(int index) throws JSONException {
         return teamData.getJSONObject(index).getInt("team");
     }
 
-    public static int getTeamName(int index) throws JSONException {
-        return teamData.getJSONObject(index).getInt("name");
+    public static String getTeamName(int index) throws JSONException {
+        return teamData.getJSONObject(index).getString("name");
     }
 
-    public static void dataSent(){
-        teamData.put(tempTeamData);
+    public static int getTeamDatabaseLength(){
+        return teamData.length();
+    }
+
+    public static int getLocalTeamNumber(int index) throws JSONException {
+        return tempTeamData.getJSONObject(index).getInt("team");
+    }
+
+    public static String getLocalTeamName(int index) throws JSONException {
+        return tempTeamData.getJSONObject(index).getString("name");
+    }
+
+    public static int getLocalTeamDatabaseLength(){
+        return tempTeamData.length();
+    }
+
+    public static void dataSent(String data){
         try {
+            teamData=new JSONArray(data);
             FileOutputStream fos = bluetooth.activity.openFileOutput("teamData", bluetooth.activity.MODE_PRIVATE);
             fos.write(teamData.toString().getBytes());
             fos.close();
-        }catch (FileNotFoundException e){
-            Log.e("Database","RIP, File Not Found Exception: OK, so the server seems to have gotten the team data, but we can't save it, so on next startup you'll need to sync w/ the server.");
-            e.printStackTrace();
-            return;
-        } catch (IOException e) {
-            Log.e("Database","RIP, File IO exception: OK, so the server seems to have gotten the team data, but we can't save it, so on next startup you'll need to sync w/ the server.");
+        }catch (JSONException | IOException e){
             e.printStackTrace();
             return;
         }
-
+        robotMatchData= new JSONArray();
+        tempTeamData= new JSONArray();
 
     }
 
-    public static void sendRobotMatch(){
-
-        String data=robotMatchData.toString();
-        bluetooth.send(","+data);
-        inSession=false;
+    private static void send(){
+        bluetooth.send("{\"matchData\":"+ robotMatchData.toString()+",\"teamData\":"+tempTeamData.toString()+"}");
     }
 
-    public static boolean createRobotMatch(int teamNumber, String match, boolean onBlue) throws JSONException{
-        if(inSession){
-             return false;
-        }
-        robotMatchData = new JSONObject("{" +
+    public static void createRobotMatch(int teamNumber, String match, boolean onBlue) throws JSONException{
+        tempRobotMatchData = new JSONObject("{" +
                 "\"type\":\"robotMatch\"," +
                 "\"team\":" + teamNumber + "," +
                 "\"matchID\":\"" + match + "\"," +
@@ -106,62 +113,65 @@ public class DatabaseGrant {
                 "\"climbSkill\":-1" + //-1 error, 0 Not in contact with BASE, 1 In contact with BASE, 2 Completed CLIMB
                 "}");
         // Meta data goes here
-
-        return inSession=true;
     }
 
     public static void setStartingPos(int pos) throws JSONException { // 0-2 close-far
-        robotMatchData.put("startingPos",pos);
+        tempRobotMatchData.put("startingPos",pos);
     }
 
     public static void setAutonSkill(int skill) throws JSONException { // 0 No auton, 1 Passes Base line, (Wrong side: -)2 Switch, (Wrong side: -)3 Scale, 5 Robot eats power cube
-        robotMatchData.put("autonSkill",skill);
+        tempRobotMatchData.put("autonSkill",skill);
     }
 
     public static void setClimbSkill(int skill) throws JSONException { // 0 Not in contact with BASE, 1 In contact with BASE, 2 Completed CLIMB
-        robotMatchData.put("climbSkill",skill);
+        tempRobotMatchData.put("climbSkill",skill);
     }
 
     public static void addScale(String type, int ms) throws JSONException {
-        robotMatchData.getJSONArray("scale").put(new JSONObject("{\"type\":\""+ type +"\",\"time\":"+ms+"}"));
+        tempRobotMatchData.getJSONArray("scale").put(new JSONObject("{\"type\":\""+ type +"\",\"time\":"+ms+"}"));
     }
 
     public static void addSwitchFriendly(String type, int ms) throws JSONException {
-        robotMatchData.getJSONArray("switchFriendly").put(new JSONObject("{\"type\":\""+ type +"\",\"time\":"+ms+"}"));
+        tempRobotMatchData.getJSONArray("switchFriendly").put(new JSONObject("{\"type\":\""+ type +"\",\"time\":"+ms+"}"));
     }
 
     public static void addSwitchEnemy(String type, int ms) throws JSONException {
-        robotMatchData.getJSONArray("switchEnemy").put(new JSONObject("{\"type\":\""+ type +"\",\"time\":"+ms+"}"));
+        tempRobotMatchData.getJSONArray("switchEnemy").put(new JSONObject("{\"type\":\""+ type +"\",\"time\":"+ms+"}"));
     }
 
     public static void addVault(String type, int ms) throws JSONException {
-        robotMatchData.getJSONArray("vault").put(new JSONObject("{\"type\":\""+ type +"\",\"time\":"+ms+"}"));
+        tempRobotMatchData.getJSONArray("vault").put(new JSONObject("{\"type\":\""+ type +"\",\"time\":"+ms+"}"));
     }
 
     public static void addPortal(String type, int ms) throws JSONException {
-        robotMatchData.getJSONArray("portal").put(new JSONObject("{\"type\":\""+ type +"\",\"time\":"+ms+"}"));
+        tempRobotMatchData.getJSONArray("portal").put(new JSONObject("{\"type\":\""+ type +"\",\"time\":"+ms+"}"));
     }
 
     public static void removeScale() throws JSONException {
-        robotMatchData.getJSONArray("scale").remove(robotMatchData.getJSONArray("scale").length()-1);
+        tempRobotMatchData.getJSONArray("scale").remove(tempRobotMatchData.getJSONArray("scale").length()-1);
     }
 
     public static void removeSwitchFriendly() throws JSONException {
-        robotMatchData.getJSONArray("switchFriendly").remove(robotMatchData.getJSONArray("switchFriendly").length()-1);
+        tempRobotMatchData.getJSONArray("switchFriendly").remove(tempRobotMatchData.getJSONArray("switchFriendly").length()-1);
     }
 
     public static void removeSwitchEnemy() throws JSONException {
-        robotMatchData.getJSONArray("switchEnemy").remove(robotMatchData.getJSONArray("switchEnemy").length()-1);
+        tempRobotMatchData.getJSONArray("switchEnemy").remove(tempRobotMatchData.getJSONArray("switchEnemy").length()-1);
     }
 
     public static void removeVault() throws JSONException {
-        robotMatchData.getJSONArray("vault").remove(robotMatchData.getJSONArray("vault").length()-1);
+        tempRobotMatchData.getJSONArray("vault").remove(tempRobotMatchData.getJSONArray("vault").length()-1);
     }
 
     public static void removePortal() throws JSONException {
-        robotMatchData.getJSONArray("portal").remove(robotMatchData.getJSONArray("portal").length()-1);
+        tempRobotMatchData.getJSONArray("portal").remove(tempRobotMatchData.getJSONArray("portal").length()-1);
     }
 
-
-
+    public static void finishMatch(){
+        if(tempRobotMatchData==null){
+            return;
+        }
+        robotMatchData.put(tempRobotMatchData);
+        tempRobotMatchData=null;
+    }
 }
