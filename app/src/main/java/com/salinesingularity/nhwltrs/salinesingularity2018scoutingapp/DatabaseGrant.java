@@ -173,5 +173,6 @@ public class DatabaseGrant {
         }
         robotMatchData.put(tempRobotMatchData);
         tempRobotMatchData=null;
+        send();
     }
 }

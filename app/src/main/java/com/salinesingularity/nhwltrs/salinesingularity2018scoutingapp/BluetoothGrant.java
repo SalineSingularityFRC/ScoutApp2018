@@ -19,7 +19,7 @@ public class BluetoothGrant {
     public AppCompatActivity activity;
     private boolean setup = false;
     private Handler handler = new Handler();
-    private static String tag = "7G7 Bluetooth Test";
+    private static String tag = "7G7 Bluetooth";
     private static String macAddress;
     private static String match = "B8:27:EB:E8:64:53";
     private String pendingData="";
