@@ -23,10 +23,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="@+id/matchNumberTextView"
-        app:layout_constraintStart_toEndOf="@+id/matchNumberTextView"
-        tools:text="Number" />
+        app:layout_constraintStart_toEndOf="@+id/matchNumberTextView" />
 
     <TextView
         android:id="@+id/allianceColorTextView"
