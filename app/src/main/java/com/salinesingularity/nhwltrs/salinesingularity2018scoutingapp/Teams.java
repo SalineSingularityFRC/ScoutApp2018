@@ -26,26 +26,18 @@ import java.util.Map;
 
 public class Teams extends AppCompatActivity {
 
+    ListView list;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teams);
 
-        super.onResume();
         Button newTeam = (Button) findViewById(R.id.newTeamsButton);
-        ListView list = (ListView) findViewById(R.id.teamsListView);
+        list = (ListView) findViewById(R.id.teamsListView);
         EditText search = (EditText) findViewById(R.id.searchTeams);
 
-        List<HashMap<String, String>> listItems = new ArrayList<>();
-        SimpleAdapter adapter = new SimpleAdapter(this, listItems, R.layout.list_item, new String[]{"First Line", "Second Line"}, new int[]{R.id.teamNameTextView, R.id.teamNumberTextView});
-        final HashMap<String, String> resultsMap = new HashMap<>();
-        list.setAdapter(adapter);
-        if (getIntent().hasExtra("Team Name")) {
-            resultsMap.put("First Line", getIntent().getExtras().getString("Team Name"));
-            resultsMap.put("Second Line", getIntent().getExtras().getString("Team Number"));
-            listItems.add(resultsMap);
-            adapter.notifyDataSetChanged();
-        }
+
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -64,5 +56,29 @@ public class Teams extends AppCompatActivity {
                 startActivity(newTeam);
             }
         });
+    }
+
+    protected void onResume() {
+        super.onResume();
+
+        List<HashMap<String, String>> listItems = new ArrayList<>();
+        SimpleAdapter adapter = new SimpleAdapter(this, listItems, R.layout.list_item, new String[]{"First Line", "Second Line"}, new int[]{R.id.teamNameTextView, R.id.teamNumberTextView});
+
+        list.setAdapter(adapter);
+        for(int i=0;i<DatabaseGrant.getTeamDatabaseLength();i++) {
+            HashMap<String, String> resultsMap = new HashMap<>();
+            resultsMap.put("First Line", DatabaseGrant.getTeamName(i));
+            resultsMap.put("Second Line", String.valueOf(DatabaseGrant.getTeamNumber(i)));
+            listItems.add(resultsMap);
+        }
+
+        for(int i=0;i<DatabaseGrant.getLocalTeamDatabaseLength();i++) {
+            HashMap<String, String> resultsMap = new HashMap<>();
+            resultsMap.put("First Line", DatabaseGrant.getLocalTeamName(i));
+            resultsMap.put("Second Line", String.valueOf(DatabaseGrant.getLocalTeamNumber(i)));
+            listItems.add(resultsMap);
+        }
+
+        adapter.notifyDataSetChanged();
     }
 }
