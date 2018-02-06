@@ -46,9 +46,10 @@ public class BeginningScreen extends AppCompatActivity {
                 Log.i("7G7 NOOO!","AWOOOGAH! AWOOOGAH! YOU PRESSED THE BUTTON! NOOO!");
                 try {
                     DatabaseGrant.createRobotMatch(5066,"Q00",true);
+                    DatabaseGrant.addPortal("endgame",90367);
                     DatabaseGrant.finishMatch();
                 } catch (JSONException e) {
-                    Log.e("7G7 NOOO!", "LOL GET REKT!!!");
+                    Log.e("7G7 NOOO!", "LOL, GET REKT!!!");
                     e.printStackTrace();
                     finish();
                 }
