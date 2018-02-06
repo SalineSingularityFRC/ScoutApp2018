@@ -32,7 +32,7 @@ public class NewTeam extends AppCompatActivity {
                     AlertDialog.Builder builder = new AlertDialog.Builder(NewTeam.this);
 
                     builder.setCancelable(false);
-                    builder.setTitle("");
+                    builder.setTitle("Error");
                     builder.setMessage("Please input a team name");
 
                     builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -49,8 +49,8 @@ public class NewTeam extends AppCompatActivity {
                     AlertDialog.Builder builder = new AlertDialog.Builder(NewTeam.this);
 
                     builder.setCancelable(false);
-                    builder.setTitle("");
-                    builder.setMessage("Please input a team number");
+                    builder.setTitle("Error");
+                    builder.setMessage("Please input a valid team number");
 
                     builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
@@ -63,7 +63,7 @@ public class NewTeam extends AppCompatActivity {
                     return;
                 }
 
-                Intent teams = new Intent(getApplicationContext(), Teams.class);
+                /*Intent teams = new Intent(getApplicationContext(), Teams.class);
                 int intTeamNumber = Integer.parseInt(checkTeamNumber);
                 try {
                     DatabaseGrant.makeTeam(intTeamNumber, checkTeamName);
@@ -72,8 +72,9 @@ public class NewTeam extends AppCompatActivity {
                     finish();
                 }
                 teams.putExtra("Team Name",checkTeamName);
-                teams.putExtra("Team Number", checkTeamNumber);
-                startActivity(teams);
+                teams.putExtra("Team Number", checkTeamNumber);*/
+                DatabaseGrant.makeTeam(Integer.parseInt(checkTeamNumber),checkTeamName);
+                finish();
             }
         });
     }

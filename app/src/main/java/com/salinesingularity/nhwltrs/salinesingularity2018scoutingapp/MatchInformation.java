@@ -67,12 +67,7 @@ public class MatchInformation extends AppCompatActivity {
                     teamNumberString = teamNumberString.replace("Bundle[{Team Number=","");
                     teamNumberString = teamNumberString.replace("}]", "");
                     int teamNumber = Integer.parseInt(teamNumberString);
-                    try {
-                        DatabaseGrant.createRobotMatch(teamNumber,checkInput, blueTeam);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                        finish();
-                    }
+                    DatabaseGrant.createRobotMatch(teamNumber,checkInput, blueTeam);
                     Intent matchData = new Intent(getApplicationContext(), MatchData.class);
                     startActivity(matchData);
                 }

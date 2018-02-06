@@ -44,20 +44,14 @@ public class BeginningScreen extends AppCompatActivity {
             public void onClick(View view) {
                 //Grant's app crashing code goes here
                 Log.i("7G7 NOOO!","AWOOOGAH! AWOOOGAH! YOU PRESSED THE BUTTON! NOOO!");
-                try {
-                    DatabaseGrant.createRobotMatch(5066,"Q00",true);
-                    DatabaseGrant.addPortal("endgame",90367);
-                    DatabaseGrant.finishMatch();
-                    DatabaseGrant.createRobotMatch(5066,"Q00",true);
-                    DatabaseGrant.addPortal("endgame",90367);
-                    DatabaseGrant.finishMatch();
-                } catch (JSONException e) {
-                    Log.e("7G7 NOOO!", "LOL, GET REKT!!!");
-                    e.printStackTrace();
-                    finish();
-                }
-
-
+                DatabaseGrant.makeTeam(5066,"Saline Singularity");
+                Log.i("7G7 NOOO!",DatabaseGrant.getLocalTeamName(0));
+                DatabaseGrant.createRobotMatch(5066,"Q01",true);
+                DatabaseGrant.addScale("teloop",50666);
+                DatabaseGrant.finishMatch();
+                DatabaseGrant.createRobotMatch(5066,"Q01",true);
+                DatabaseGrant.addScale("teloop",50777);
+                DatabaseGrant.finishMatch();
             }
         });
 
