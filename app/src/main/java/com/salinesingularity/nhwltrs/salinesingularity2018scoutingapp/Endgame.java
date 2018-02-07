@@ -1,5 +1,6 @@
 package com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.os.Handler;
 import android.os.SystemClock;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +34,15 @@ public class Endgame extends Fragment {
     int Seconds, Minutes, MilliSeconds ;
     TextView climbTimer;
     boolean started = false;
+    MatchData parent;
+
+    @SuppressLint("ValidFragment")
+    public Endgame(MatchData matchData) {
+        parent = matchData;
+    }
+
+    public Endgame(){
+        Log.e("7G7","Ouch, I'm not supposed to be here.");}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -100,6 +111,7 @@ public class Endgame extends Fragment {
             public void onClick(View view) {
                 allianceSwitchLevel++;
                 allianceSwitchCounter.setText(allianceSwitchLevel + "");
+                DatabaseGrant.addSwitchFriendly("endgame", parent.getTimer());
             }
         });
 
@@ -109,6 +121,7 @@ public class Endgame extends Fragment {
                 if (allianceSwitchLevel>0) {
                     allianceSwitchLevel--;
                     allianceSwitchCounter.setText(allianceSwitchLevel + "");
+                    DatabaseGrant.removeSwitchFriendly();
                 }
             }
         });
@@ -118,6 +131,7 @@ public class Endgame extends Fragment {
             public void onClick(View view) {
                 scaleLevel++;
                 scaleCounter.setText(scaleLevel + "");
+                DatabaseGrant.addScale("endgame", parent.getTimer());
             }
         });
 
@@ -127,6 +141,7 @@ public class Endgame extends Fragment {
                 if (scaleLevel>0) {
                     scaleLevel--;
                     scaleCounter.setText(scaleLevel + "");
+                    DatabaseGrant.removeScale();
                 }
             }
         });
@@ -136,6 +151,7 @@ public class Endgame extends Fragment {
             public void onClick(View view) {
                 opponentsSwitchLevel++;
                 opponentsSwitchCounter.setText(opponentsSwitchLevel + "");
+                DatabaseGrant.addSwitchEnemy("endgame", parent.getTimer());
             }
         });
 
@@ -145,6 +161,7 @@ public class Endgame extends Fragment {
                 if (opponentsSwitchLevel>0) {
                     opponentsSwitchLevel--;
                     opponentsSwitchCounter.setText(opponentsSwitchLevel + "");
+                    DatabaseGrant.removeSwitchEnemy();
                 }
             }
         });
@@ -189,6 +206,7 @@ public class Endgame extends Fragment {
         endMatch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                DatabaseGrant.finishMatch();
                 Intent startScreen = new Intent(view.getContext(), BeginningScreen.class);
                 startActivity(startScreen);
             }
