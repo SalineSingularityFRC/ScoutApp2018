@@ -77,7 +77,7 @@
                 android:layout_marginTop="8dp"
                 android:text="Competitive"
                 android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="@+id/teleopScaleTextView"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/teleopOpponentsSwitchTextView" />
 
             <View
