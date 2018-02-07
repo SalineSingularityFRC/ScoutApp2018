@@ -1,7 +1,10 @@
 package com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +20,16 @@ public class Teleop extends Fragment {
     int opponentsSwitchCounterLevel = 0;
     int portalCounterLevel = 0;
     int vaultCounterLevel = 0;
+    MatchData parent;
+
+    @SuppressLint("ValidFragment")
+    public Teleop(MatchData matchData) {
+        parent = matchData;
+    }
+
+    public Teleop(){
+        Log.e("7G7","Ouch, I'm not supposed to be here.");
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -44,6 +57,7 @@ public class Teleop extends Fragment {
                 if (allianceSwitchCounterLevel > 0) {
                     allianceSwitchCounterLevel--;
                     allianceSwitchCounter.setText(allianceSwitchCounterLevel + "");
+                    DatabaseGrant.removeSwitchFriendly();
                 }
             }
         });
@@ -53,6 +67,7 @@ public class Teleop extends Fragment {
             public void onClick(View view) {
                 allianceSwitchCounterLevel++;
                 allianceSwitchCounter.setText(allianceSwitchCounterLevel + "");
+                DatabaseGrant.addSwitchFriendly("teleop", parent.getTimer());
             }
         });
 
@@ -61,6 +76,7 @@ public class Teleop extends Fragment {
             public void onClick(View view) {
                 scaleCounterLevel++;
                 scaleCounter.setText(scaleCounterLevel + "");
+                DatabaseGrant.addScale("teleop", parent.getTimer());
             }
         });
 
@@ -70,6 +86,7 @@ public class Teleop extends Fragment {
                 if (scaleCounterLevel> 0) {
                     scaleCounterLevel--;
                     scaleCounter.setText(scaleCounterLevel + "");
+                    DatabaseGrant.removeScale();
                 }
             }
         });
@@ -80,6 +97,7 @@ public class Teleop extends Fragment {
                 if (opponentsSwitchCounterLevel > 0) {
                     opponentsSwitchCounterLevel--;
                     opponentSwitchCounter.setText(opponentsSwitchCounterLevel + "");
+                    DatabaseGrant.removeSwitchEnemy();
                 }
             }
         });
@@ -89,6 +107,7 @@ public class Teleop extends Fragment {
             public void onClick(View view) {
                 opponentsSwitchCounterLevel++;
                 opponentSwitchCounter.setText(opponentsSwitchCounterLevel + "");
+                DatabaseGrant.addSwitchEnemy("teleop", parent.getTimer());
             }
         });
 
