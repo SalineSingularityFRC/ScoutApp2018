@@ -12,6 +12,7 @@ import org.json.JSONException;
 public class BeginningScreen extends AppCompatActivity {
 
     public BluetoothGrant bluetooth=new BluetoothGrant(this);
+    private boolean started=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,14 +45,7 @@ public class BeginningScreen extends AppCompatActivity {
             public void onClick(View view) {
                 //Grant's app crashing code goes here
                 Log.i("7G7 NOOO!","AWOOOGAH! AWOOOGAH! YOU PRESSED THE BUTTON! NOOO!");
-                DatabaseGrant.makeTeam(5066,"Saline Singularity");
-                Log.i("7G7 NOOO!",DatabaseGrant.getLocalTeamName(0));
-                DatabaseGrant.createRobotMatch(5066,"Q01",true);
-                DatabaseGrant.addScale("teloop",50666);
-                DatabaseGrant.finishMatch();
-                DatabaseGrant.createRobotMatch(5066,"Q01",true);
-                DatabaseGrant.addScale("teloop",50777);
-                DatabaseGrant.finishMatch();
+
             }
         });
 
@@ -63,7 +57,10 @@ public class BeginningScreen extends AppCompatActivity {
         super.onStart();
 
         bluetooth.setup();
-        //bluetooth.send("Hello world!");
+
+        if(!started){
+            bluetooth.send("{\"teamData\":[],\"matchData\":[]}");
+        }
     }
 
     @Override
