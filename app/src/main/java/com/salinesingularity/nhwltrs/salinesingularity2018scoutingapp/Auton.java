@@ -1,5 +1,6 @@
 package com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
@@ -7,9 +8,11 @@ import android.os.SystemClock;
 import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -34,6 +37,9 @@ public class Auton extends Fragment {
     boolean autoRun = false;
     boolean blockInScale = false;
 
+    public Auton() {
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -55,8 +61,7 @@ public class Auton extends Fragment {
         list.add("Away");
         list.add("Middle");
         list.add("Closest");
-        list.add("");
-        final int listsize = list.size() - 1;
+        final int listsize = list.size();
 
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, list) {
             @Override
@@ -69,24 +74,32 @@ public class Auton extends Fragment {
         startingPosition.setAdapter(dataAdapter);
         startingPosition.setSelection(listsize);
 
+        /*startingPosition.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                //DatabaseGrant.setStartingPos(i);
+                Toast toast = Toast.makeText(getContext(), i,Toast.LENGTH_SHORT);
+                toast.show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });*/
+
+        //DatabaseGrant.setAutonSkill(0);
+
         autoRunSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if (isChecked) {
                     autoRun = true;
-                    /*try {
-                        DatabaseGrant.setAutonSkill(1);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }*/
+                    //DatabaseGrant.setAutonSkill(1);
                 }
                 else {
                     autoRun = false;
-                    /*try {
-                        DatabaseGrant.setAutonSkill(0);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }*/
+                    //DatabaseGrant.setAutonSkill(0);
                 }
             }
         });
@@ -100,18 +113,10 @@ public class Auton extends Fragment {
                     if (AllianceSwitchCounter == 0) {
                         blockInSwitch = false;
                         if (autoRun) {
-                            /*try {
-                                DatabaseGrant.setAutonSkill(1);
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }*/
+                            //DatabaseGrant.setAutonSkill(1);
                         }
                         else {
-                            /*try {
-                                DatabaseGrant.setAutonSkill(0);
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }*/
+                            //DatabaseGrant.setAutonSkill(0);
                         }
                     }
                 }
@@ -124,11 +129,7 @@ public class Auton extends Fragment {
                 AllianceSwitchCounter++;
                 allianceSwitchCounterTextView.setText(AllianceSwitchCounter + "");
                 blockInSwitch = true;
-                /*try {
-                    DatabaseGrant.setAutonSkill(2);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }*/
+                //DatabaseGrant.setAutonSkill(2);
             }
         });
 
@@ -136,33 +137,17 @@ public class Auton extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if (isChecked) {
-                    /*try {
-                        DatabaseGrant.setAutonSkill(-2);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }*/
+                    //DatabaseGrant.setAutonSkill(-2);
                 }
                 else {
                     if (AllianceSwitchCounter > 0) {
-                        /*try {
-                            DatabaseGrant.setAutonSkill(2);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }*/
+                        //DatabaseGrant.setAutonSkill(2);
                     }
                     else if (autoRun) {
-                        /*try {
-                            DatabaseGrant.setAutonSkill(1);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }*/
+                        //DatabaseGrant.setAutonSkill(1);
                     }
                     else {
-                        /*try {
-                            DatabaseGrant.setAutonSkill(0);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }*/
+                        //DatabaseGrant.setAutonSkill(0);
                     }
                 }
             }
@@ -174,11 +159,7 @@ public class Auton extends Fragment {
                 ScaleCounter++;
                 scaleCounterTextView.setText(ScaleCounter + "");
                 blockInScale = true;
-                /*try {
-                    DatabaseGrant.setAutonSkill(3);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }*/
+                //DatabaseGrant.setAutonSkill(3);
             }
         });
 
@@ -191,18 +172,10 @@ public class Auton extends Fragment {
                     if (ScaleCounter == 0) {
                         blockInScale = false;
                         if (autoRun) {
-                            /*try {
-                                DatabaseGrant.setAutonSkill(1);
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }*/
+                            //DatabaseGrant.setAutonSkill(1);
                         }
                         else {
-                            /*try {
-                                DatabaseGrant.setAutonSkill(0);
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }*/
+                            //DatabaseGrant.setAutonSkill(0);
                         }
                     }
                 }
@@ -213,43 +186,22 @@ public class Auton extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if (isChecked && ScaleCounter>0) {
-                    /*try {
-                        DatabaseGrant.setAutonSkill(-3);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }*/
+                    //DatabaseGrant.setAutonSkill(-3);
                 }
                 else {
                     if (ScaleCounter>0) {
-                        /*try {
-                            DatabaseGrant.setAutonSkill(3);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }*/
+                        //DatabaseGrant.setAutonSkill(3);
                     }
                     else if (autoRun) {
-                        /*try {
-                            DatabaseGrant.setAutonSkill(1);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }*/
+                        //DatabaseGrant.setAutonSkill(1);
                     }
                     else {
-                        /*try {
-                            DatabaseGrant.setAutonSkill(0);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }*/
+                        //DatabaseGrant.setAutonSkill(0);
                     }
                 }
             }
         });
 
-        /*try {
-            DatabaseGrant.setAutonSkill(0);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }*/
         return view;
     }
 }
