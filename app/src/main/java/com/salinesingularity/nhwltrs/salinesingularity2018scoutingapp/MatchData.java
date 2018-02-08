@@ -27,8 +27,8 @@ public class MatchData extends AppCompatActivity {
     private ViewPager mViewPager;
     long MillisecondTime, StartTime, TimeBuff, UpdateTime = 0L ;
     Handler handler;
-    int Seconds;
-    double MilliSeconds;
+    double Seconds;
+    int MilliSeconds;
     TextView matchTimer;
 
     @Override
@@ -64,8 +64,8 @@ public class MatchData extends AppCompatActivity {
             public void run() {
                 MillisecondTime = SystemClock.uptimeMillis() - StartTime;
                 UpdateTime = TimeBuff + MillisecondTime;
-                Seconds = (int) (UpdateTime / 1000);
-                int timeLeft = 135 - Seconds;
+                Seconds = (double) (UpdateTime / 1000);
+                double timeLeft = 135 - Seconds;
                 MilliSeconds = (int) (UpdateTime % 1000);
                 MilliSeconds = MilliSeconds / 1000;
                 if (timeLeft < 0) {
@@ -80,8 +80,8 @@ public class MatchData extends AppCompatActivity {
     private void setUpViewPager(ViewPager viewPager) {
         SectionsPagerAdapter adapter = new SectionsPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new Auton(), "Auton");
-        adapter.addFragment(new Teleop(), "Teleop");
-        adapter.addFragment(new Endgame(), "Endgame");
+        adapter.addFragment(new Teleop(this), "Teleop");
+        adapter.addFragment(new Endgame(this), "Endgame");
         viewPager.setAdapter(adapter);
     }
 
@@ -116,5 +116,9 @@ public class MatchData extends AppCompatActivity {
             return mFragmentList.size();
         }
 
+    }
+
+    public int getTimer () {
+        return MilliSeconds;
     }
 }
