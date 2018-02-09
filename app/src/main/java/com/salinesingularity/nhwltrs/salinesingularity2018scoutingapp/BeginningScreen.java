@@ -60,6 +60,7 @@ public class BeginningScreen extends AppCompatActivity {
 
         if(!started){
             bluetooth.send("{\"teamData\":[],\"matchData\":[]}");
+            started=true;
         }
     }
 

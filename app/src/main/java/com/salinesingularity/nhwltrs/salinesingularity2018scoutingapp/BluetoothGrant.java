@@ -16,7 +16,7 @@ import me.aflak.bluetooth.CommunicationCallback;
 
 public class BluetoothGrant {
     private Bluetooth bluetooth;
-    public AppCompatActivity activity;
+    public BeginningScreen activity;
     private boolean setup = false;
     private Handler handler = new Handler();
     private static String tag = "7G7 Bluetooth";
@@ -61,7 +61,7 @@ public class BluetoothGrant {
         }
     };
 
-    public BluetoothGrant(AppCompatActivity a){
+    public BluetoothGrant(BeginningScreen a){
         activity=a;
         bluetooth = new Bluetooth(activity);
         bluetooth.setCommunicationCallback(CCB);

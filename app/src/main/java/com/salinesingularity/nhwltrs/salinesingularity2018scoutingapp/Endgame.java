@@ -19,7 +19,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Endgame extends Fragment {
@@ -95,6 +94,7 @@ public class Endgame extends Fragment {
         liftBots.add("1");
         liftBots.add("2");
         final int listsize = liftBots.size();
+        liftBots.add("Select Number"); //This is correct
 
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, liftBots) {
             @Override
@@ -207,8 +207,7 @@ public class Endgame extends Fragment {
             @Override
             public void onClick(View view) {
                 DatabaseGrant.finishMatch();
-                Intent startScreen = new Intent(view.getContext(), BeginningScreen.class);
-                startActivity(startScreen);
+                parent.finish();
             }
         });
 

@@ -22,9 +22,6 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.json.JSONException;
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,6 +59,7 @@ public class Auton extends Fragment {
         list.add("Middle");
         list.add("Closest");
         final int listsize = list.size();
+        list.add("Select Position"); //This is correct
 
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, list) {
             @Override

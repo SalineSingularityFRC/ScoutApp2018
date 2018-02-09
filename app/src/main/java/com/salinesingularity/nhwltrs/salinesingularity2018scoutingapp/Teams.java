@@ -46,6 +46,7 @@ public class Teams extends AppCompatActivity {
                 Intent matchInformation = new Intent(getApplicationContext(), MatchInformation.class);
                 matchInformation.putExtra("Team Number", teamNumber);
                 startActivity(matchInformation);
+                finish();
             }
         });
 
