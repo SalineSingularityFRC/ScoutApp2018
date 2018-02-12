@@ -86,18 +86,18 @@ public class Auton extends Fragment {
             }
         });*/
 
-        //DatabaseGrant.setAutonSkill(0);
+        DatabaseGrant.setAutonSkill(0);
 
         autoRunSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if (isChecked) {
                     autoRun = true;
-                    //DatabaseGrant.setAutonSkill(1);
+                    DatabaseGrant.setAutonSkill(1);
                 }
                 else {
                     autoRun = false;
-                    //DatabaseGrant.setAutonSkill(0);
+                    DatabaseGrant.setAutonSkill(0);
                 }
             }
         });
@@ -111,10 +111,10 @@ public class Auton extends Fragment {
                     if (AllianceSwitchCounter == 0) {
                         blockInSwitch = false;
                         if (autoRun) {
-                            //DatabaseGrant.setAutonSkill(1);
+                            DatabaseGrant.setAutonSkill(1);
                         }
                         else {
-                            //DatabaseGrant.setAutonSkill(0);
+                            DatabaseGrant.setAutonSkill(0);
                         }
                     }
                 }
@@ -127,7 +127,7 @@ public class Auton extends Fragment {
                 AllianceSwitchCounter++;
                 allianceSwitchCounterTextView.setText(AllianceSwitchCounter + "");
                 blockInSwitch = true;
-                //DatabaseGrant.setAutonSkill(2);
+                DatabaseGrant.setAutonSkill(2);
             }
         });
 
@@ -135,17 +135,17 @@ public class Auton extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if (isChecked) {
-                    //DatabaseGrant.setAutonSkill(-2);
+                    DatabaseGrant.setAutonSkill(-2);
                 }
                 else {
                     if (AllianceSwitchCounter > 0) {
-                        //DatabaseGrant.setAutonSkill(2);
+                        DatabaseGrant.setAutonSkill(2);
                     }
                     else if (autoRun) {
-                        //DatabaseGrant.setAutonSkill(1);
+                        DatabaseGrant.setAutonSkill(1);
                     }
                     else {
-                        //DatabaseGrant.setAutonSkill(0);
+                        DatabaseGrant.setAutonSkill(0);
                     }
                 }
             }
@@ -157,7 +157,7 @@ public class Auton extends Fragment {
                 ScaleCounter++;
                 scaleCounterTextView.setText(ScaleCounter + "");
                 blockInScale = true;
-                //DatabaseGrant.setAutonSkill(3);
+                DatabaseGrant.setAutonSkill(3);
             }
         });
 
@@ -170,10 +170,10 @@ public class Auton extends Fragment {
                     if (ScaleCounter == 0) {
                         blockInScale = false;
                         if (autoRun) {
-                            //DatabaseGrant.setAutonSkill(1);
+                            DatabaseGrant.setAutonSkill(1);
                         }
                         else {
-                            //DatabaseGrant.setAutonSkill(0);
+                            DatabaseGrant.setAutonSkill(0);
                         }
                     }
                 }
@@ -184,17 +184,17 @@ public class Auton extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if (isChecked && ScaleCounter>0) {
-                    //DatabaseGrant.setAutonSkill(-3);
+                    DatabaseGrant.setAutonSkill(-3);
                 }
                 else {
                     if (ScaleCounter>0) {
-                        //DatabaseGrant.setAutonSkill(3);
+                        DatabaseGrant.setAutonSkill(3);
                     }
                     else if (autoRun) {
-                        //DatabaseGrant.setAutonSkill(1);
+                        DatabaseGrant.setAutonSkill(1);
                     }
                     else {
-                        //DatabaseGrant.setAutonSkill(0);
+                        DatabaseGrant.setAutonSkill(0);
                     }
                 }
             }
