@@ -72,19 +72,28 @@ public class Auton extends Fragment {
         startingPosition.setAdapter(dataAdapter);
         startingPosition.setSelection(listsize);
 
-        /*startingPosition.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        startingPosition.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                //DatabaseGrant.setStartingPos(i);
-                Toast toast = Toast.makeText(getContext(), i,Toast.LENGTH_SHORT);
-                toast.show();
+                String startingPos = startingPosition.getSelectedItem().toString();
+                switch(startingPos) {
+                    case "Away":
+                        DatabaseGrant.setStartingPos(2);
+                        break;
+                    case "Middle":
+                        DatabaseGrant.setStartingPos(1);
+                        break;
+                    case "Closest":
+                        DatabaseGrant.setStartingPos(0);
+                        break;
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
-        });*/
+        });
 
         DatabaseGrant.setAutonSkill(0);
 
