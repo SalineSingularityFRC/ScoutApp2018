@@ -3,94 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     tools:context="com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp.MatchData">
-
-    <Spinner
-        android:id="@+id/startingPositionSpinner"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/startingPositionTextView"
-        app:layout_constraintTop_toTopOf="@+id/startingPositionTextView" />
-
-    <TextView
-        android:id="@+id/autonAllianceSwitchTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Alliance Switch"
-        android:textColor="#000000"
-        android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view" />
-
-    <CheckBox
-        android:id="@+id/allianceSwitchWrongSideCheckBox"
-        android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Wrong Side"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.85"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/autonAllianceSwitchTextView" />
-
-    <Switch
-        android:id="@+id/drovePastHalfwaySwitch"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:text="Drove Past Halfway"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/autoRunSwitch" />
-
-    <Button
-        android:id="@+id/autonAllianceSwitchAddButton"
-        android:layout_width="41dp"
-        android:layout_height="38dp"
-        android:layout_marginEnd="16dp"
-        android:text="+"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/autonAllianceSwitchTextView" />
-
-    <Switch
-        android:id="@+id/autoRunSwitch"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:text="Auto-Run"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/startingPositionTextView" />
-
-    <View
-        android:id="@+id/view2"
-        android:layout_width="0dp"
-        android:layout_height="5dp"
-        android:layout_gravity="center"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:background="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/allianceSwitchWrongSideCheckBox" />
 
     <TextView
         android:id="@+id/startingPositionTextView"
@@ -104,91 +18,54 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/autonAllianceSwitchCounterTextView"
-        android:layout_width="wrap_content"
+    <Spinner
+        android:id="@+id/startingPositionSpinner"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="0"
-        android:textAlignment="center"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="@+id/autonAllianceSwitchMinusButton"
-        app:layout_constraintEnd_toStartOf="@+id/autonAllianceSwitchAddButton"
-        app:layout_constraintTop_toTopOf="@+id/autonAllianceSwitchMinusButton" />
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/startingPositionTextView" />
 
-    <Button
-        android:id="@+id/autonScaleMinusButton"
-        android:layout_width="41dp"
-        android:layout_height="38dp"
-        android:layout_marginEnd="16dp"
-        android:text="-"
-        app:layout_constraintEnd_toStartOf="@+id/autonScaleCounerTextView"
-        app:layout_constraintTop_toTopOf="@+id/autonScaleTextView" />
+    <RadioGroup
+        android:id="@+id/autonAbilityRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="95dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startingPositionTextView">
+
+        <RadioButton
+            android:id="@+id/autoRunRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Auto-Run" />
+
+        <RadioButton
+            android:id="@+id/switchRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Switch" />
+
+        <RadioButton
+            android:id="@+id/scaleRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Scale" />
+    </RadioGroup>
 
     <CheckBox
-        android:id="@+id/scaleWrongSideCheckBox"
+        android:id="@+id/wrongSideCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Wrong Side"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/autonScaleTextView" />
-
-    <TextView
-        android:id="@+id/autonScaleCounerTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="0"
-        android:textAlignment="center"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="@+id/autonScaleMinusButton"
-        app:layout_constraintEnd_toStartOf="@+id/autonScaleAddButton"
-        app:layout_constraintTop_toTopOf="@+id/autonScaleTextView" />
-
-    <TextView
-        android:id="@+id/autonScaleTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Scale"
-        android:textColor="#000000"
-        android:textSize="25sp"
+        android:text="Wrong Side"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view2" />
-
-    <Button
-        android:id="@+id/autonAllianceSwitchMinusButton"
-        android:layout_width="41dp"
-        android:layout_height="38dp"
-        android:layout_marginEnd="16dp"
-        android:text="-"
-        app:layout_constraintEnd_toStartOf="@+id/autonAllianceSwitchCounterTextView"
-        app:layout_constraintTop_toTopOf="@+id/autonAllianceSwitchTextView" />
-
-    <View
-        android:id="@+id/view"
-        android:layout_width="0dp"
-        android:layout_height="5dp"
-        android:layout_gravity="center"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:background="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/drovePastHalfwaySwitch" />
-
-    <Button
-        android:id="@+id/autonScaleAddButton"
-        android:layout_width="41dp"
-        android:layout_height="38dp"
-        android:layout_marginEnd="16dp"
-        android:text="+"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/autonScaleTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/autonAbilityRadioGroup" />
 
 </android.support.constraint.ConstraintLayout>
