@@ -20,6 +20,7 @@ import org.json.JSONException;
 public class MatchInformation extends AppCompatActivity {
 
     boolean blueTeam;
+    boolean abort = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,10 +68,20 @@ public class MatchInformation extends AppCompatActivity {
                     int teamNumber = Integer.parseInt(teamNumberString);
                     DatabaseGrant.createRobotMatch(teamNumber,checkInput, blueTeam);
                     Intent matchData = new Intent(getApplicationContext(), MatchData.class);
+                    abort=true;
                     startActivity(matchData);
                 }
             }
         });
 
+    }
+
+    protected void onResume() {
+
+        super.onResume();
+
+        if(abort){
+            finish();
+        }
     }
 }
