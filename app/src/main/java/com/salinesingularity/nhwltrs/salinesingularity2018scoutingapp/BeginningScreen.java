@@ -20,32 +20,12 @@ public class BeginningScreen extends AppCompatActivity {
         setContentView(R.layout.activity_beginning_screen);
 
         Button newMatch = (Button)findViewById(R.id.inputDataButton);
-        Button analyzeData = (Button)findViewById(R.id.analyzeDataButton);
-
-        Button grantTest = (Button)findViewById(R.id.grantTestButton);
 
         newMatch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent teams = new Intent(getApplicationContext(), Teams.class);
                 startActivity(teams);
-            }
-        });
-
-        analyzeData.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent analyzeTeams = new Intent(getApplicationContext(), AnalyzeTeams.class);
-                startActivity(analyzeTeams);
-            }
-        });
-
-        grantTest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //Grant's app crashing code goes here
-                Log.i("7G7 NOOO!","AWOOOGAH! AWOOOGAH! YOU PRESSED THE BUTTON! NOOO!");
-
             }
         });
 

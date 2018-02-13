@@ -26,7 +26,6 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp.NewTeam" />
         <activity android:name=".Teams" />
-        <activity android:name=".AnalyzeTeams" />
         <activity android:name=".PreviousMatches"></activity>
     </application>
 
