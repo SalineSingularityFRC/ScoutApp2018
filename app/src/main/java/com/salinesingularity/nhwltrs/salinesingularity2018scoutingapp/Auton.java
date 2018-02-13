@@ -52,6 +52,7 @@ public class Auton extends Fragment {
         final RadioButton switchButton = (RadioButton)view.findViewById(R.id.switchRadioButton);
         final RadioButton scale = (RadioButton)view.findViewById(R.id.scaleRadioButton);
         final CheckBox wrongSide = (CheckBox)view.findViewById(R.id.wrongSideCheckBox);
+        RadioButton noAuton = (RadioButton)view.findViewById(R.id.noAutonRadioButton);
 
         List<String> list = new ArrayList<String>();
         list.add("Away");
@@ -95,6 +96,13 @@ public class Auton extends Fragment {
         });
 
         DatabaseGrant.setAutonSkill(0);
+
+        noAuton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseGrant.setAutonSkill(0);
+            }
+        });
 
         autoRun.setOnClickListener(new View.OnClickListener() {
             @Override
