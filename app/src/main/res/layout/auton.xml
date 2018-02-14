@@ -20,17 +20,20 @@
 
     <Spinner
         android:id="@+id/startingPositionSpinner"
-        android:layout_width="150dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:minWidth="150dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/startingPositionTextView"
         app:layout_constraintTop_toTopOf="@+id/startingPositionTextView" />
 
     <RadioGroup
         android:id="@+id/autonAbilityRadioGroup"
         android:layout_width="wrap_content"
-        android:layout_height="95dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:checkedButton="@+id/noAutonRadioButton"
@@ -42,35 +45,39 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Didn't Move" />
+            android:text="Didn't Move"
+            android:textSize="18sp" />
 
         <RadioButton
             android:id="@+id/autoRunRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Auto-Run" />
+            android:text="Auto-Run"
+            android:textSize="18sp" />
 
         <RadioButton
             android:id="@+id/switchRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Switch" />
+            android:text="Switch"
+            android:textSize="18sp" />
 
         <RadioButton
             android:id="@+id/scaleRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Scale" />
+            android:text="Scale"
+            android:textSize="18sp" />
     </RadioGroup>
 
     <CheckBox
         android:id="@+id/wrongSideCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:text="Wrong Side"
         app:layout_constraintStart_toStartOf="parent"
