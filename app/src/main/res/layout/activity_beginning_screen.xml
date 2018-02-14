@@ -65,6 +65,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleTextView"
-        app:srcCompat="@drawable/Pixelated_Logo_512" />
+        app:srcCompat="@drawable/pixelated_logo_512" />
 
 </android.support.constraint.ConstraintLayout>
