@@ -116,6 +116,7 @@ public class Teleop extends Fragment {
             public void onClick(View view) {
                 portalCounterLevel++;
                 portalCounter.setText(portalCounterLevel + "");
+                DatabaseGrant.addPortal("teleop", parent.getTimer());
             }
         });
 
@@ -125,6 +126,7 @@ public class Teleop extends Fragment {
                 if (portalCounterLevel > 0) {
                     portalCounterLevel--;
                     portalCounter.setText(portalCounterLevel + "");
+                    DatabaseGrant.removePortal();
                 }
             }
         });
@@ -134,6 +136,7 @@ public class Teleop extends Fragment {
             public void onClick(View view) {
                 vaultCounterLevel++;
                 vaultCounter.setText(vaultCounterLevel + "");
+                DatabaseGrant.addVault("teleop", parent.getTimer());
             }
         });
 
@@ -143,6 +146,7 @@ public class Teleop extends Fragment {
                 if (vaultCounterLevel > 0) {
                     vaultCounterLevel--;
                     vaultCounter.setText(vaultCounterLevel + "");
+                    DatabaseGrant.removeVault();
                 }
             }
         });

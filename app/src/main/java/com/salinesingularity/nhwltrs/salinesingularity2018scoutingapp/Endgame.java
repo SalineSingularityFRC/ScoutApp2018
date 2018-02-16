@@ -171,6 +171,7 @@ public class Endgame extends Fragment {
             public void onClick(View view) {
                 portalLevel++;
                 portalCounter.setText(portalLevel + "");
+                DatabaseGrant.addPortal("endgame", parent.getTimer());
             }
         });
 
@@ -180,6 +181,7 @@ public class Endgame extends Fragment {
                 if (portalLevel > 0) {
                     portalLevel--;
                     portalCounter.setText(portalLevel + "");
+                    DatabaseGrant.removePortal();
                 }
             }
         });
@@ -189,6 +191,7 @@ public class Endgame extends Fragment {
             public void onClick(View view) {
                 vaultLevel++;
                 vaultCounter.setText(vaultLevel + "");
+                DatabaseGrant.addVault("endgame", parent.getTimer());
             }
         });
 
@@ -198,6 +201,7 @@ public class Endgame extends Fragment {
                 if (vaultLevel > 0) {
                     vaultLevel--;
                     vaultCounter.setText(vaultLevel + "");
+                    DatabaseGrant.removeVault();
                 }
             }
         });
