@@ -12,21 +12,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BeginningScreen">
+        <activity android:name=".BeginningScreen" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MatchInformation" />
+        <activity android:name=".MatchInformation" android:screenOrientation="portrait" />
         <activity
             android:name=".MatchData"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_match_data"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp.NewTeam" />
-        <activity android:name=".Teams" />
-        <activity android:name=".PreviousMatches"></activity>
+        <activity android:name="com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp.NewTeam" android:screenOrientation="portrait" />
+        <activity android:name=".Teams"  android:screenOrientation="portrait"/>
+        <activity android:name=".PreviousMatches" android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
