@@ -51,6 +51,12 @@ public class Teleop extends Fragment {
         Button vaultAdd = (Button) view.findViewById(R.id.teleopVaultAddButton);
         final TextView vaultCounter = (TextView) view.findViewById(R.id.teleopVaultCounterTextView);
 
+        allianceSwitchCounter.setText(allianceSwitchCounterLevel + "");
+        opponentSwitchCounter.setText(opponentsSwitchCounterLevel + "");
+        scaleCounter.setText(scaleCounterLevel + "");
+        portalCounter.setText(portalCounterLevel + "");
+        vaultCounter.setText(vaultCounterLevel + "");
+
         allianceSwitchMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

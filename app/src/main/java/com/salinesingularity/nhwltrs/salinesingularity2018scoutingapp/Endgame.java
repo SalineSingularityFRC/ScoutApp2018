@@ -74,6 +74,11 @@ public class Endgame extends Fragment {
         handler = new Handler();
 
         DatabaseGrant.setClimbSkill(0);
+        allianceSwitchCounter.setText(allianceSwitchLevel + "");
+        opponentsSwitchCounter.setText(opponentsSwitchLevel + "");
+        scaleCounter.setText(scaleLevel + "");
+        portalCounter.setText(portalLevel + "");
+        vaultCounter.setText(vaultLevel + "");
 
         startStopButton.setOnClickListener(new View.OnClickListener() {
             @Override
