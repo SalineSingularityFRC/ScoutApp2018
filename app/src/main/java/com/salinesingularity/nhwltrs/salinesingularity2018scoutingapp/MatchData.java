@@ -24,7 +24,7 @@ public class MatchData extends AppCompatActivity {
     private ViewPager mViewPager;
     long MillisecondTime, StartTime, TimeBuff, UpdateTime = 0L ;
     Handler handler;
-    double Seconds;
+    int Seconds;
     int MilliSeconds;
     TextView matchTimer;
     boolean started;
@@ -62,8 +62,8 @@ public class MatchData extends AppCompatActivity {
             public void run() {
                 MillisecondTime = SystemClock.uptimeMillis() - StartTime;
                 UpdateTime = TimeBuff + MillisecondTime;
-                Seconds = (double) (UpdateTime / 1000);
-                double timeLeft = 135 - Seconds;
+                Seconds = (int) (UpdateTime / 1000);
+                int timeLeft = 135 - Seconds;
                 MilliSeconds = (int) (UpdateTime % 1000);
                 MilliSeconds = MilliSeconds / 1000;
                 if (timeLeft < 0) {
