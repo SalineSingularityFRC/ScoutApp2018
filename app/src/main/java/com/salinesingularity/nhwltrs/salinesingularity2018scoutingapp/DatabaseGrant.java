@@ -5,7 +5,6 @@ package com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp;
  */
 
 import android.content.Context;
-import android.util.Log;
 
 import org.json.*;
 
