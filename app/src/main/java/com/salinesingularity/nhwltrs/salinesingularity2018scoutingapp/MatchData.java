@@ -22,7 +22,7 @@ public class MatchData extends AppCompatActivity {
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
-    long MillisecondTime, StartTime, TimeBuff, UpdateTime = 0L ;
+    long StartTime, MillisecondTime, TimeBuff, UpdateTime = 0L ;
     Handler handler;
     int Seconds;
     int MilliSeconds;
@@ -117,6 +117,6 @@ public class MatchData extends AppCompatActivity {
     }
 
     public int getTimer () {
-        return MilliSeconds;
+        return Seconds;
     }
 }
