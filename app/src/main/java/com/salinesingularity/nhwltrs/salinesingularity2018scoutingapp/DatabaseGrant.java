@@ -48,7 +48,6 @@ public class DatabaseGrant {
     public static void makeTeam(int teamNumber, String teamName){
         try {
             tempTeamData.put(new JSONObject("{"+
-                    "\"type\":\"team\"," +
                     "\"team\":" + teamNumber + "," +
                     "\"name\":\"" + teamName + "\"" +
             "}"));
@@ -124,7 +123,6 @@ public class DatabaseGrant {
     public static void createRobotMatch(int teamNumber, String match, boolean onBlue){
         try {
             tempRobotMatchData = new JSONObject("{" +
-                    "\"type\":\"robotMatch\"," +
                     "\"team\":" + teamNumber + "," +
                     "\"matchID\":\"" + match + "\"," +
                     "\"onBlue\":"+onBlue+"," +
