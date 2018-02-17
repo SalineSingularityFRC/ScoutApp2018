@@ -72,6 +72,7 @@ public class Auton extends Fragment {
         startingPosition.setAdapter(dataAdapter);
         startingPosition.setSelection(listsize);
 
+
         startingPosition.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {

@@ -83,39 +83,44 @@ public class Endgame extends Fragment {
         startStopButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (started) {
-                    TimeBuff += MillisecondTime;
-                    handler.removeCallbacks(runnable);
-                    startStopButton.setText("Start");
-                    started = false;
-                    DatabaseGrant.setClimbSkill(2);
+                if (parent.started) {
+                    if (started) {
+                        TimeBuff += MillisecondTime;
+                        handler.removeCallbacks(runnable);
+                        startStopButton.setText("Start");
+                        started = false;
+                        DatabaseGrant.setClimbSkill(2);
+                    }
+                    else {
+                        StartTime = SystemClock.uptimeMillis();
+                        handler.postDelayed(runnable, 0);
+                        started = true;
+                        startStopButton.setText("Stop");
+                    }
                 }
-                else {
-                    StartTime = SystemClock.uptimeMillis();
-                    handler.postDelayed(runnable, 0);
-                    started = true;
-                    startStopButton.setText("Stop");
-                }
-
             }
         });
 
         allianceSwitchAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                allianceSwitchLevel++;
-                allianceSwitchCounter.setText(allianceSwitchLevel + "");
-                DatabaseGrant.addSwitchFriendly("endgame", parent.getTimer());
+                if (parent.started) {
+                    allianceSwitchLevel++;
+                    allianceSwitchCounter.setText(allianceSwitchLevel + "");
+                    DatabaseGrant.addSwitchFriendly("endgame", parent.getTimer());
+                }
             }
         });
 
         allianceSwitchMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (allianceSwitchLevel>0) {
-                    allianceSwitchLevel--;
-                    allianceSwitchCounter.setText(allianceSwitchLevel + "");
-                    DatabaseGrant.removeSwitchFriendly();
+                if (parent.started) {
+                    if (allianceSwitchLevel>0) {
+                        allianceSwitchLevel--;
+                        allianceSwitchCounter.setText(allianceSwitchLevel + "");
+                        DatabaseGrant.removeSwitchFriendly();
+                    }
                 }
             }
         });
@@ -123,19 +128,23 @@ public class Endgame extends Fragment {
         scaleAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                scaleLevel++;
-                scaleCounter.setText(scaleLevel + "");
-                DatabaseGrant.addScale("endgame", parent.getTimer());
+                if (parent.started) {
+                    scaleLevel++;
+                    scaleCounter.setText(scaleLevel + "");
+                    DatabaseGrant.addScale("endgame", parent.getTimer());
+                }
             }
         });
 
         scaleMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (scaleLevel>0) {
-                    scaleLevel--;
-                    scaleCounter.setText(scaleLevel + "");
-                    DatabaseGrant.removeScale();
+                if (parent.started) {
+                    if (scaleLevel>0) {
+                        scaleLevel--;
+                        scaleCounter.setText(scaleLevel + "");
+                        DatabaseGrant.removeScale();
+                    }
                 }
             }
         });
@@ -143,19 +152,23 @@ public class Endgame extends Fragment {
         opponentsSwitchAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                opponentsSwitchLevel++;
-                opponentsSwitchCounter.setText(opponentsSwitchLevel + "");
-                DatabaseGrant.addSwitchEnemy("endgame", parent.getTimer());
+                if (parent.started) {
+                    opponentsSwitchLevel++;
+                    opponentsSwitchCounter.setText(opponentsSwitchLevel + "");
+                    DatabaseGrant.addSwitchEnemy("endgame", parent.getTimer());
+                }
             }
         });
 
         opponentsSwitchMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (opponentsSwitchLevel>0) {
-                    opponentsSwitchLevel--;
-                    opponentsSwitchCounter.setText(opponentsSwitchLevel + "");
-                    DatabaseGrant.removeSwitchEnemy();
+                if (parent.started) {
+                    if (opponentsSwitchLevel>0) {
+                        opponentsSwitchLevel--;
+                        opponentsSwitchCounter.setText(opponentsSwitchLevel + "");
+                        DatabaseGrant.removeSwitchEnemy();
+                    }
                 }
             }
         });
@@ -163,19 +176,23 @@ public class Endgame extends Fragment {
         portalAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                portalLevel++;
-                portalCounter.setText(portalLevel + "");
-                DatabaseGrant.addPortal("endgame", parent.getTimer());
+                if (parent.started) {
+                    portalLevel++;
+                    portalCounter.setText(portalLevel + "");
+                    DatabaseGrant.addPortal("endgame", parent.getTimer());
+                }
             }
         });
 
         portalMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (portalLevel > 0) {
-                    portalLevel--;
-                    portalCounter.setText(portalLevel + "");
-                    DatabaseGrant.removePortal();
+                if (parent.started) {
+                    if (portalLevel > 0) {
+                        portalLevel--;
+                        portalCounter.setText(portalLevel + "");
+                        DatabaseGrant.removePortal();
+                    }
                 }
             }
         });
@@ -183,19 +200,23 @@ public class Endgame extends Fragment {
         vaultAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                vaultLevel++;
-                vaultCounter.setText(vaultLevel + "");
-                DatabaseGrant.addVault("endgame", parent.getTimer());
+                if (parent.started) {
+                    vaultLevel++;
+                    vaultCounter.setText(vaultLevel + "");
+                    DatabaseGrant.addVault("endgame", parent.getTimer());
+                }
             }
         });
 
         vaultMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (vaultLevel > 0) {
-                    vaultLevel--;
-                    vaultCounter.setText(vaultLevel + "");
-                    DatabaseGrant.removeVault();
+                if (parent.started) {
+                    if (vaultLevel > 0) {
+                        vaultLevel--;
+                        vaultCounter.setText(vaultLevel + "");
+                        DatabaseGrant.removeVault();
+                    }
                 }
             }
         });
@@ -203,15 +224,17 @@ public class Endgame extends Fragment {
         park.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-                if (isChecked) {
-                    DatabaseGrant.setClimbSkill(1);
-                }
-                else {
-                    if (climbTimer.getText().toString() == "00:000") {
-                        DatabaseGrant.setClimbSkill(0);
+                if (parent.started) {
+                    if (isChecked) {
+                        DatabaseGrant.setClimbSkill(1);
                     }
                     else {
-                        DatabaseGrant.setClimbSkill(2);
+                        if (climbTimer.getText().toString() == "00:000") {
+                            DatabaseGrant.setClimbSkill(0);
+                        }
+                        else {
+                            DatabaseGrant.setClimbSkill(2);
+                        }
                     }
                 }
             }
@@ -221,8 +244,10 @@ public class Endgame extends Fragment {
         endMatch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatabaseGrant.finishMatch();
-                parent.finish();
+                if (parent.started) {
+                    DatabaseGrant.finishMatch();
+                    parent.finish();
+                }
             }
         });
 

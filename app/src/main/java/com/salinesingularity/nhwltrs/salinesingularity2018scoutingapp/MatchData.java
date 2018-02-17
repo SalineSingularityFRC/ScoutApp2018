@@ -27,6 +27,7 @@ public class MatchData extends AppCompatActivity {
     double Seconds;
     int MilliSeconds;
     TextView matchTimer;
+    boolean started;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +53,7 @@ public class MatchData extends AppCompatActivity {
                 startMatch.setVisibility(View.INVISIBLE);
                 StartTime = SystemClock.uptimeMillis();
                 handler.postDelayed(runnable, 0);
+                started = true;
             }
         });
     }
