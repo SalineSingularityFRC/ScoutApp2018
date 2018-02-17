@@ -14,8 +14,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -63,12 +65,14 @@ public class Endgame extends Fragment {
         Button vaultAdd = (Button) view.findViewById(R.id.endgameVaultAddButton);
         Button vaultMinus = (Button) view.findViewById(R.id.endgameVaultMinusButton);
         final TextView vaultCounter = (TextView) view.findViewById(R.id.endgameVaultCounterTextView);
-        final Spinner numberofBots = (Spinner) view.findViewById(R.id.spinner);
         Button endMatch = (Button) view.findViewById(R.id.endMatchButton);
         climbTimer = (TextView) view.findViewById(R.id.climbTimerTextView);
         final Button startStopButton = (Button) view.findViewById(R.id.climbStartStopButton);
+        Switch park = (Switch) view.findViewById(R.id.parkSwitch);
 
         handler = new Handler();
+
+        DatabaseGrant.setClimbSkill(0);
 
         startStopButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +82,7 @@ public class Endgame extends Fragment {
                     handler.removeCallbacks(runnable);
                     startStopButton.setText("Start");
                     started = false;
+                    DatabaseGrant.setClimbSkill(2);
                 }
                 else {
                     StartTime = SystemClock.uptimeMillis();
@@ -88,23 +93,6 @@ public class Endgame extends Fragment {
 
             }
         });
-
-        List<String> liftBots = new ArrayList<String>();
-        liftBots.add("0");
-        liftBots.add("1");
-        liftBots.add("2");
-        final int listsize = liftBots.size();
-        liftBots.add("Select Number"); //This is correct
-
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, liftBots) {
-            @Override
-            public int getCount() {
-                return (listsize);
-            }
-        };
-
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        numberofBots.setAdapter(dataAdapter);
 
         allianceSwitchAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -171,6 +159,7 @@ public class Endgame extends Fragment {
             public void onClick(View view) {
                 portalLevel++;
                 portalCounter.setText(portalLevel + "");
+                DatabaseGrant.addPortal("endgame", parent.getTimer());
             }
         });
 
@@ -180,6 +169,7 @@ public class Endgame extends Fragment {
                 if (portalLevel > 0) {
                     portalLevel--;
                     portalCounter.setText(portalLevel + "");
+                    DatabaseGrant.removePortal();
                 }
             }
         });
@@ -189,6 +179,7 @@ public class Endgame extends Fragment {
             public void onClick(View view) {
                 vaultLevel++;
                 vaultCounter.setText(vaultLevel + "");
+                DatabaseGrant.addVault("endgame", parent.getTimer());
             }
         });
 
@@ -198,6 +189,24 @@ public class Endgame extends Fragment {
                 if (vaultLevel > 0) {
                     vaultLevel--;
                     vaultCounter.setText(vaultLevel + "");
+                    DatabaseGrant.removeVault();
+                }
+            }
+        });
+
+        park.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    DatabaseGrant.setClimbSkill(1);
+                }
+                else {
+                    if (climbTimer.getText().toString() == "00:000") {
+                        DatabaseGrant.setClimbSkill(0);
+                    }
+                    else {
+                        DatabaseGrant.setClimbSkill(2);
+                    }
                 }
             }
         });
