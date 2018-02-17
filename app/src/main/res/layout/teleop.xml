@@ -111,9 +111,9 @@
                 android:id="@+id/teleopScaleMinusButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="46dp"
                 android:text="-"
-                app:layout_constraintEnd_toStartOf="@+id/teleopScaleCounterTextView"
+                app:layout_constraintEnd_toStartOf="@+id/teleopScaleAddButton"
                 app:layout_constraintTop_toTopOf="@+id/teleopScaleTextView" />
 
             <TextView
@@ -142,9 +142,9 @@
                 android:id="@+id/teleopAllianceSwitchMinusButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="46dp"
                 android:text="-"
-                app:layout_constraintEnd_toStartOf="@+id/teleopAllianceSwitchCounterTextView"
+                app:layout_constraintEnd_toStartOf="@+id/teleopAllianceSwitchAddButton"
                 app:layout_constraintTop_toTopOf="@+id/teleopAllianceSwitchTextView" />
 
             <TextView
@@ -200,9 +200,9 @@
                 android:id="@+id/teleopOpponentsSwitchMinusButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="46dp"
                 android:text="-"
-                app:layout_constraintEnd_toStartOf="@+id/teleopOpponentsSwitchCounterTextView"
+                app:layout_constraintEnd_toStartOf="@+id/teleopOpponentsSwitchAddButton"
                 app:layout_constraintTop_toTopOf="@+id/teleopOpponentsSwitchTextView" />
 
             <TextView
@@ -242,9 +242,9 @@
                 android:id="@+id/teleopPortalMinusButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="46dp"
                 android:text="-"
-                app:layout_constraintEnd_toStartOf="@+id/teleopPortalCounterTextView"
+                app:layout_constraintEnd_toStartOf="@+id/teleopPortalAddButton"
                 app:layout_constraintTop_toTopOf="@+id/teleopPortalTextView" />
 
             <TextView
@@ -284,9 +284,9 @@
                 android:id="@+id/teleopVaultMinusButton"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="46dp"
                 android:text="-"
-                app:layout_constraintEnd_toStartOf="@+id/teleopVaultCounterTextView"
+                app:layout_constraintEnd_toStartOf="@+id/teleopVaultAddButton"
                 app:layout_constraintTop_toTopOf="@+id/teleopVaultTextView" />
 
             <TextView
