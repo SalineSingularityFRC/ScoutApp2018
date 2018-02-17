@@ -2,10 +2,7 @@ package com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp;
 
 import android.bluetooth.BluetoothDevice;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-
-import java.util.Objects;
 
 import me.aflak.bluetooth.Bluetooth;
 import me.aflak.bluetooth.CommunicationCallback;
