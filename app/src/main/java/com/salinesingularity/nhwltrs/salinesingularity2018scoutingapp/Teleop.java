@@ -51,13 +51,21 @@ public class Teleop extends Fragment {
         Button vaultAdd = (Button) view.findViewById(R.id.teleopVaultAddButton);
         final TextView vaultCounter = (TextView) view.findViewById(R.id.teleopVaultCounterTextView);
 
+        allianceSwitchCounter.setText(allianceSwitchCounterLevel + "");
+        opponentSwitchCounter.setText(opponentsSwitchCounterLevel + "");
+        scaleCounter.setText(scaleCounterLevel + "");
+        portalCounter.setText(portalCounterLevel + "");
+        vaultCounter.setText(vaultCounterLevel + "");
+
         allianceSwitchMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (allianceSwitchCounterLevel > 0) {
-                    allianceSwitchCounterLevel--;
-                    allianceSwitchCounter.setText(allianceSwitchCounterLevel + "");
-                    DatabaseGrant.removeSwitchFriendly();
+                if (parent.started) {
+                    if (allianceSwitchCounterLevel > 0) {
+                        allianceSwitchCounterLevel--;
+                        allianceSwitchCounter.setText(allianceSwitchCounterLevel + "");
+                        DatabaseGrant.removeSwitchFriendly();
+                    }
                 }
             }
         });
@@ -65,28 +73,34 @@ public class Teleop extends Fragment {
         allianceSwitchAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                allianceSwitchCounterLevel++;
-                allianceSwitchCounter.setText(allianceSwitchCounterLevel + "");
-                DatabaseGrant.addSwitchFriendly("teleop", parent.getTimer());
+                if (parent.started) {
+                    allianceSwitchCounterLevel++;
+                    allianceSwitchCounter.setText(allianceSwitchCounterLevel + "");
+                    DatabaseGrant.addSwitchFriendly("teleop", parent.getTimer());
+                }
             }
         });
 
         scaleAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                scaleCounterLevel++;
-                scaleCounter.setText(scaleCounterLevel + "");
-                DatabaseGrant.addScale("teleop", parent.getTimer());
+                if (parent.started) {
+                    scaleCounterLevel++;
+                    scaleCounter.setText(scaleCounterLevel + "");
+                    DatabaseGrant.addScale("teleop", parent.getTimer());
+                }
             }
         });
 
         scaleMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (scaleCounterLevel> 0) {
-                    scaleCounterLevel--;
-                    scaleCounter.setText(scaleCounterLevel + "");
-                    DatabaseGrant.removeScale();
+                if (parent.started) {
+                    if (scaleCounterLevel> 0) {
+                        scaleCounterLevel--;
+                        scaleCounter.setText(scaleCounterLevel + "");
+                        DatabaseGrant.removeScale();
+                    }
                 }
             }
         });
@@ -94,10 +108,12 @@ public class Teleop extends Fragment {
         opponentSwitchMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (opponentsSwitchCounterLevel > 0) {
-                    opponentsSwitchCounterLevel--;
-                    opponentSwitchCounter.setText(opponentsSwitchCounterLevel + "");
-                    DatabaseGrant.removeSwitchEnemy();
+                if (parent.started) {
+                    if (opponentsSwitchCounterLevel > 0) {
+                        opponentsSwitchCounterLevel--;
+                        opponentSwitchCounter.setText(opponentsSwitchCounterLevel + "");
+                        DatabaseGrant.removeSwitchEnemy();
+                    }
                 }
             }
         });
@@ -105,28 +121,34 @@ public class Teleop extends Fragment {
         opponentSwitchAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                opponentsSwitchCounterLevel++;
-                opponentSwitchCounter.setText(opponentsSwitchCounterLevel + "");
-                DatabaseGrant.addSwitchEnemy("teleop", parent.getTimer());
+                if (parent.started) {
+                    opponentsSwitchCounterLevel++;
+                    opponentSwitchCounter.setText(opponentsSwitchCounterLevel + "");
+                    DatabaseGrant.addSwitchEnemy("teleop", parent.getTimer());
+                }
             }
         });
 
         portalAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                portalCounterLevel++;
-                portalCounter.setText(portalCounterLevel + "");
-                DatabaseGrant.addPortal("teleop", parent.getTimer());
+                if (parent.started) {
+                    portalCounterLevel++;
+                    portalCounter.setText(portalCounterLevel + "");
+                    DatabaseGrant.addPortal("teleop", parent.getTimer());
+                }
             }
         });
 
         portalMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (portalCounterLevel > 0) {
-                    portalCounterLevel--;
-                    portalCounter.setText(portalCounterLevel + "");
-                    DatabaseGrant.removePortal();
+                if (parent.started) {
+                    if (portalCounterLevel > 0) {
+                        portalCounterLevel--;
+                        portalCounter.setText(portalCounterLevel + "");
+                        DatabaseGrant.removePortal();
+                    }
                 }
             }
         });
@@ -134,19 +156,23 @@ public class Teleop extends Fragment {
         vaultAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                vaultCounterLevel++;
-                vaultCounter.setText(vaultCounterLevel + "");
-                DatabaseGrant.addVault("teleop", parent.getTimer());
+                if (parent.started) {
+                    vaultCounterLevel++;
+                    vaultCounter.setText(vaultCounterLevel + "");
+                    DatabaseGrant.addVault("teleop", parent.getTimer());
+                }
             }
         });
 
         vaultMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (vaultCounterLevel > 0) {
-                    vaultCounterLevel--;
-                    vaultCounter.setText(vaultCounterLevel + "");
-                    DatabaseGrant.removeVault();
+                if (parent.started) {
+                    if (vaultCounterLevel > 0) {
+                        vaultCounterLevel--;
+                        vaultCounter.setText(vaultCounterLevel + "");
+                        DatabaseGrant.removeVault();
+                    }
                 }
             }
         });

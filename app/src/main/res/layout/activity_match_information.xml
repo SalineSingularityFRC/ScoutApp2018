@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#e6c902"
     tools:context="com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp.MatchInformation">
 
     <TextView
@@ -14,6 +15,7 @@
         android:layout_marginTop="32dp"
         android:text="Match #"
         android:textSize="30sp"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,6 +36,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:text="Alliance Color:"
+        android:textColor="#000000"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/matchNumberTextView" />

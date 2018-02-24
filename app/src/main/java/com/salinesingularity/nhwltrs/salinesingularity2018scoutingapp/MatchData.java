@@ -22,11 +22,12 @@ public class MatchData extends AppCompatActivity {
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
-    long MillisecondTime, StartTime, TimeBuff, UpdateTime = 0L ;
+    long StartTime, MillisecondTime, TimeBuff, UpdateTime = 0L ;
     Handler handler;
-    double Seconds;
+    int Seconds;
     int MilliSeconds;
     TextView matchTimer;
+    boolean started;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +53,7 @@ public class MatchData extends AppCompatActivity {
                 startMatch.setVisibility(View.INVISIBLE);
                 StartTime = SystemClock.uptimeMillis();
                 handler.postDelayed(runnable, 0);
+                started = true;
             }
         });
     }
@@ -60,8 +62,8 @@ public class MatchData extends AppCompatActivity {
             public void run() {
                 MillisecondTime = SystemClock.uptimeMillis() - StartTime;
                 UpdateTime = TimeBuff + MillisecondTime;
-                Seconds = (double) (UpdateTime / 1000);
-                double timeLeft = 135 - Seconds;
+                Seconds = (int) (UpdateTime / 1000);
+                int timeLeft = 135 - Seconds;
                 MilliSeconds = (int) (UpdateTime % 1000);
                 MilliSeconds = MilliSeconds / 1000;
                 if (timeLeft < 0) {
@@ -115,6 +117,6 @@ public class MatchData extends AppCompatActivity {
     }
 
     public int getTimer () {
-        return MilliSeconds;
+        return Seconds;
     }
 }

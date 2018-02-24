@@ -35,9 +35,6 @@ public class Teams extends AppCompatActivity {
 
         Button newTeam = (Button) findViewById(R.id.newTeamsButton);
         list = (ListView) findViewById(R.id.teamsListView);
-        EditText search = (EditText) findViewById(R.id.searchTeams);
-
-
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

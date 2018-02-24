@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BeginningScreen" android:screenOrientation="portrait">
+        <activity android:name=".BeginningScreen" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,7 +27,6 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="com.salinesingularity.nhwltrs.salinesingularity2018scoutingapp.NewTeam" android:screenOrientation="portrait" />
         <activity android:name=".Teams"  android:screenOrientation="portrait"/>
-        <activity android:name=".PreviousMatches" android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

@@ -172,6 +172,33 @@ public class DatabaseGrant {
         }
     }
 
+    public static int readScale(){
+        try {
+            return tempRobotMatchData.getJSONArray("scale").length();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
+    public static int readSwitchFriendly(){
+        try {
+            return tempRobotMatchData.getJSONArray("switchFriendly").length();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
+    public static int readSwitchEnemy(){
+        try {
+            return tempRobotMatchData.getJSONArray("switchEnemy").length();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
     public static void addSwitchFriendly(String type, int ms){
         try {
             tempRobotMatchData.getJSONArray("switchFriendly").put(new JSONObject("{\"type\":\""+ type +"\",\"time\":"+ms+"}"));
