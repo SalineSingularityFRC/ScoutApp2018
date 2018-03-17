@@ -18,7 +18,7 @@ public class BluetoothGrant {
     private Handler handler = new Handler();
     private static String tag = "7G7 Bluetooth";
     private static String macAddress;
-    private static String match = "B8:27:EB:E8:64:53";
+    private static String match = "B8:27:EB:E8:64:53"; //Put the bluetooth address of you Pi server here
     private String pendingData="";
     //public String match1="F0:27:2D:13:41:6C";
     //public String match2="74:75:48:53:5D:FB";
