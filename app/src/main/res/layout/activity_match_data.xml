@@ -31,7 +31,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/matchStartButton"
         app:layout_constraintEnd_toEndOf="@+id/matchStartButton"
         app:layout_constraintStart_toStartOf="@+id/matchStartButton"
-        app:layout_constraintTop_toTopOf="@+id/matchStartButton" />
+        app:layout_constraintTop_toTopOf="@+id/matchStartButton"/>
 
     <Button
         android:id="@+id/matchStartButton"

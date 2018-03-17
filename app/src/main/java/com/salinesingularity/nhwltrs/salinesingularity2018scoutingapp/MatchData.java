@@ -63,7 +63,7 @@ public class MatchData extends AppCompatActivity {
                 MillisecondTime = SystemClock.uptimeMillis() - StartTime;
                 UpdateTime = TimeBuff + MillisecondTime;
                 Seconds = (int) (UpdateTime / 1000);
-                int timeLeft = 135 - Seconds;
+                int timeLeft = 150 - Seconds;
                 MilliSeconds = (int) (UpdateTime % 1000);
                 MilliSeconds = MilliSeconds / 1000;
                 if (timeLeft < 0) {
